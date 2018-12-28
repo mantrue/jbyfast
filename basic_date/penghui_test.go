@@ -10,7 +10,7 @@ import (
 func TestRunHttp(t *testing.T) {
 	var wg sync.WaitGroup
 	wg.Add(500)
-	for i := 0; i < 500; i++ {
+	for i := 0; i < 150; i++ {
 		go func() {
 			res, err := http.Get("http://localhost/?a=1")
 			if err != nil {

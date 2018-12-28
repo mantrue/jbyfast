@@ -1292,4 +1292,1091 @@
 [ info ] 当前请求:localhost/ [0s]
 [ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
 [ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:53:47.974828 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:53:47.988993 +0800 CST m=+767.554283001 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:53:48.808632 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:53:48.8232404 +0800 CST m=+768.388530401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:54:28.629300 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.629300 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.629300 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.629300 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.629300 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.629300 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.630298 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.631295 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.631295 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.631295 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.631295 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.631295 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.631295 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.631295 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.631295 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.631295 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.631295 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.632292 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.632292 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.632292 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.632292 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.632292 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.632292 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.632292 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.633289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.634287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.635289 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.636281 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.637279 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.638278 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.639274 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.640271 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.641269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.642269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.642269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.642269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.642269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.642269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:28.642269 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:54:28.6433312 +0800 CST m=+808.208621201 ] 请求url: [ 2018-12-28 16:54:28.6433312 +0800 CST m=+808.208621201 ] 请求url: /?a=1  请求方法:/?a=1  请求方法:GET /
+[ info ] 当前请求:GET localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:28.7277115 +0800 CST m=+808.293001501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:28.7277115 +0800 CST m=+808.293001501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7277115 +0800 CST m=+808.293001501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7277115 +0800 CST m=+808.293001501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7277115 +0800 CST m=+808.293001501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:28.7287084 +0800 CST m=+808.293998401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7287084 +0800 CST m=+808.293998401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:28.7287084 +0800 CST m=+808.293998401 ] 请求url: [ 2018-12-28 16:54:28.7287084 +0800 CST m=+808.293998401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET [ 2018-12-28 16:54:28.7287084 +0800 CST m=+808.293998401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: [ [ 2018-12-28 16:54:28.7287084 +0800 CST m=+808.293998401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go2018-12-28 16:54:28.7287084 +0800 CST m=+808.293998401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 2018-12-28 16:54:28.7287084 +0800 CST m=+808.293998401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7297075 +0800 CST m=+808.294997501 ] 请求url: [ 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7297075 +0800 CST m=+808.294997501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:28.7317264 +0800 CST m=+808.297016401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ 2018-12-28 16:54:28.7317264 +0800 CST m=+808.297016401 ] 请求url: a=1 ]
+[ 2018-12-28 16:54:28.7317264 +0800 CST m=+808.297016401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:28.7326984 +0800 CST m=+808.297988401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7326984 +0800 CST m=+808.297988401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7326984 +0800 CST m=+808.297988401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7326984 +0800 CST m=+808.297988401 ] 请求url: /?a=1  请求方法:[ GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7326984 +0800 CST m=+808.297988401 ] 请求url: 2018-12-28 16:54:28.7326984 +0800 CST m=+808.297988401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:[ 2018-12-28 16:54:28.7326984 +0800 CST m=+808.297988401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:28.7336971 +0800 CST m=+808.298987101 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7336971 +0800 CST m=+808.298987101 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7336971 +0800 CST m=+808.298987101 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7346935 +0800 CST m=+808.299983501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7356917 +0800 CST m=+808.300981701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7356917 +0800 CST m=+808.300981701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:[ [ localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: 2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: [ 2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ /?a=1  请求方法:/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: [ GET [ [ /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: 2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: /?a=1  请求方法:/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:[ 2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ GET 2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: 2018-12-28 16:54:28.7366874 +0800 CST m=+808.301977401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=1  请求方法: /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: [ [ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: [ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/[ [ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: [ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url:  [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=12018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7396792 +0800 CST m=+808.304969201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+  请求方法:GET [ 2018-12-28 16:54:28.7396792 +0800 CST m=+808.304969201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:[ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=1  请求方法:[ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: [ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ [ [ 2018-12-28 16:54:28.7396792 +0800 CST m=+808.304969201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:28.7406774 +0800 CST m=+808.305967401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7416752 +0800 CST m=+808.306965201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7416752 +0800 CST m=+808.306965201 ] 请求url: [ 2018-12-28 16:54:28.7416752 +0800 CST m=+808.306965201 ] 请求url: [ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+18[ 2018-12-28 16:54:28.7406774 +0800 CST m=+808.305967401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ a=1 ]
+[ 2018-12-28 16:54:28.7416752 +0800 CST m=+808.306965201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7406774 +0800 CST m=+808.305967401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7386825 +0800 CST m=+808.303972501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7416752 +0800 CST m=+808.306965201 ] 请求url: /?a=1[  ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:28.7416752 +0800 CST m=+808.306965201 ] 请求url: /?a=1  请求方法:GET a=1 ]
+[   请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:28.7406774 +0800 CST m=+808.305967401 ] 请求url: [ 2018-12-28 16:54:28.7406774 +0800 CST m=+808.305967401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7416752 +0800 CST m=+808.306965201 ] 请求url: [ 2018-12-28 16:54:28.7426713 +0800 CST m=+808.307961301 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1[ /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: 2018-12-28 16:54:28.7426713 +0800 CST m=+808.307961301 ] 请求url: /?a=1  请求方法:GET  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7416752 +0800 CST m=+808.306965201 ] 请求url:  /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 2018-12-28 16:54:28.7426713 +0800 CST m=+808.307961301 ] 请求url: [ [ localhost/ [0s]
+[ info ] [ 当前行号: /?a=1  请求方法:/?a=1[ 2018-12-28 16:54:28.7446676 +0800 CST m=+808.309957601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7426713 +0800 CST m=+808.307961301 ] 请求url: [ [ 2018-12-28 16:54:28.7416752 +0800 CST m=+808.306965201 ] 请求url: /?a=1  请求方法:GET 2018-12-28 16:54:28.7416752 +0800 CST m=+808.306965201 ] 请求url: [ /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:2018-12-28 16:54:28.7426713 +0800 CST m=+808.307961301 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7446676 +0800 CST m=+808.309957601 ] 请求url: /?a=1  请求方法:[ 2018-12-28 16:54:28.7446676 +0800 CST m=+808.309957601 ] 请求url: 2018-12-28 16:54:28.7396792 +0800 CST m=+808.304969201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET [ 2018-12-28 16:54:28.7406774 +0800 CST m=+808.305967401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/
+[ info ] 当前请求:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7446676 +0800 CST m=+808.309957601 ] 请求url: 2018-12-28 16:54:28.7406774 +0800 CST m=+808.305967401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+ ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7446676 +0800 CST m=+808.309957601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+localhost/ [0s]
+[ info ] [ 当前行号: [ /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:28.7446676 +0800 CST m=+808.309957601 ] 请求url: 18/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+ ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:54:57.663508 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.663508 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.663508 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.665503 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.668494 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.668494 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.668494 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.668494 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.668494 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.669491 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.669491 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.669491 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.669491 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.669491 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.670489 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.670489 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.670489 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.670489 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.670489 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.670489 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.671486 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.671486 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.671486 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.671486 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.672484 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.672484 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.672484 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.672484 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.672484 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.672484 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.672484 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.673483 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.673483 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.673483 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.673483 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.673483 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.673483 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.673483 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.673483 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.673483 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.674481 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.674481 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.674481 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.674481 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.674481 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.674481 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.674481 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.674481 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.674481 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.674481 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.675475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.675475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.675475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.675475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.675475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.675475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.675475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.675475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.675475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.675475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.676475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.676475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.676475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.676475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.676475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.676475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.676475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.676475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.676475 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.677470 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.677470 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.677470 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.677470 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:54:57.6774703 +0800 CST m=+837.242760301 ] 请求url: /?a=1  请求方法:GET[xorm] [info]  2018/12/28 16:54:57.677470 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+ /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: [xorm] [info]  2018/12/28 16:54:57.677470 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:54:57.677470 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.677470 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.677470 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.677470 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.678467 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.678467 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.678467 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.678467 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.678467 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.678467 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.678467 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.678467 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.678467 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.679464 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.679464 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.679464 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.679464 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.679464 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.679464 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.679464 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.679464 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.680462 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.680462 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.680462 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.680462 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.680462 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.680462 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.680462 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.680462 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.681459 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.681459 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.681459 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.681459 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.681459 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.681459 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.682457 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.682457 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ [xorm] [info]  2018/12/28 16:54:57.682457 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+2018-12-28 16:54:57.6824577 +0800 CST m=+837.247747701 ] 请求url: /?a=1  请求方法:GET [xorm] [info]  2018/12/28 16:54:57.682457 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:54:57.682457 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.694426 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.682457 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.694426 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.683455 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.683455 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.683455 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.683455 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.683455 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.683455 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.686448 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.690465 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.693457 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.693457 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.695424 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[xorm] [info]  2018/12/28 16:54:57.683455 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:54:57.6999207 +0800 CST m=+837.265210701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7089261 +0800 CST m=+837.274216101 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7705636 +0800 CST m=+837.335853601 ] 请求url: /?a=1  请求方法:GET /[ 
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 2018-12-28 16:54:57.7705636 +0800 CST m=+837.335853601 ] 请求url: [ 2018-12-28 16:54:57.7715617 +0800 CST m=+837.336851701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1[ 2018-12-28 16:54:57.7715617 +0800 CST m=+837.336851701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+ ]
+E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7715617 +0800 CST m=+837.336851701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:[ [ [ 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7715617 +0800 CST m=+837.336851701 ] 请求url: localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7715617 +0800 CST m=+837.336851701 ] 请求url: 2018-12-28 16:54:57.7725587 +0800 CST m=+837.337848701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7715617 +0800 CST m=+837.336851701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: [ 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7725587 +0800 CST m=+837.337848701 ] 请求url: /?a=1  请求方法:GET [ [ 2018-12-28 16:54:57.7725587 +0800 CST m=+837.337848701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: /?a=1  请求方法:/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7715617 +0800 CST m=+837.336851701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: /?a=1  请求方法:GET[ [ [ GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ 2018-12-28 16:54:57.7725587 +0800 CST m=+837.337848701 ] 请求url: [ [ 2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: [ E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+a=1[ [ [ 2018-12-28 16:54:57.7725587 +0800 CST m=+837.337848701 ] 请求url: /?a=1  请求方法:[ [ 2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url:  /localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ 2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: [ 2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:57.7725587 +0800 CST m=+837.337848701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ 2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: [ [ a=1 ]
+2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: [ [ 2018-12-28 16:54:57.7765477 +0800 CST m=+837.341837701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+
+[ info ] 当前请求:localhost/[ /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: [ [ 2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /?a=1  请求方法:2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ [ 2018-12-28 16:54:57.7765477 +0800 CST m=+837.341837701 ] 请求url: /?a=12018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: /?a=1  请求方法:GET  [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: [ [ GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ [  ]
+[ /
+[ info ] 当前请求:  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ 2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7765477 +0800 CST m=+837.341837701 ] 请求url: localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: 2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: [ [ 2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: /?a=1  请求方法:/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+a=1 ]
+2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: /2018-12-28 16:54:57.7765477 +0800 CST m=+837.341837701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: 2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: [ [ [ 2018-12-28 16:54:57.7785422 +0800 CST m=+837.343832201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:2018-12-28 16:54:57.7765477 +0800 CST m=+837.341837701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+a=1 ]
+2018-12-28 16:54:57.7785422 +0800 CST m=+837.343832201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7785422 +0800 CST m=+837.343832201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:[ 2018-12-28 16:54:57.7735556 +0800 CST m=+837.338845601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:[ E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] 当前请求:2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: /?a=1  请求方法:GET [ 2018-12-28 16:54:57.7805374 +0800 CST m=+837.345827401 ] 请求url: /?a=1  请求方法:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+a=1 ]
+2018-12-28 16:54:57.7815346 +0800 CST m=+837.346824601 ] 请求url: localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: [ localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ /?a=1[ 2018-12-28 16:54:57.7805374 +0800 CST m=+837.345827401 ] 请求url: 2018-12-28 16:54:57.7785422 +0800 CST m=+837.343832201 ] 请求url: /?a=1  请求方法:/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+
+[ info ] [ 请求参数 ] [ a=1 ]
+a=1 ]
+[ GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+GET /?a=1  请求方法:[ 2018-12-28 16:54:57.7795398 +0800 CST m=+837.344829801 ] 请求url: 2018-12-28 16:54:57.7785422 +0800 CST m=+837.343832201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7805374 +0800 CST m=+837.34582740118 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7825355 +0800 CST m=+837.347825501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: [ [ 2018-12-28 16:54:57.7835288 +0800 CST m=+837.348818801 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ [ [ [ 2018-12-28 16:54:57.7835288 +0800 CST m=+837.348818801 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7755601 +0800 CST m=+837.340850101 ] 请求url: /?a=1  请求方法:GET 2018-12-28 16:54:57.7825355 +0800 CST m=+837.347825501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:2018-12-28 16:54:57.7785422 +0800 CST m=+837.343832201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7845264 +0800 CST m=+837.349816401 ] 请求url: /?a=1  请求方法:localhost/ [0s]
+[ info ] [ 当前行号: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+ ] 请求url: /?a=1  请求方法:2018-12-28 16:54:57.7785422 +0800 CST m=+837.343832201 ] 请求url: [ 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7815346 +0800 CST m=+837.346824601 ] 请求url: [ /?a=1  请求方法:2018-12-28 16:54:57.7835288 +0800 CST m=+837.348818801 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18[ 2018-12-28 16:54:57.7835288 +0800 CST m=+837.348818801 ] 请求url: /?a=1  请求方法:GET GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7825355 +0800 CST m=+837.347825501 ] 请求url: [ 2018-12-28 16:54:57.7845264 +0800 CST m=+837.349816401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]
+ ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ [ GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7805374 +0800 CST m=+837.345827401 ] 请求url: /?a=1  请求方法:GET /2018-12-28 16:54:57.7845264 +0800 CST m=+837.349816401 ] 请求url: /?a=1  请求方法:/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+ ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: [ 2018-12-28 16:54:57.7845264 +0800 CST m=+837.349816401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7835288 +0800 CST m=+837.348818801localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+GET /
+[ info ] 当前请求:2018-12-28 16:54:57.7845264 +0800 CST m=+837.349816401 ] 请求url: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+ ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+GET /
+[ info ] 当前请求:2018-12-28 16:54:57.785524 +0800 CST m=+837.350814001 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+2018-12-28 16:54:57.7845264 +0800 CST m=+837.349816401 ] 请求url: 2018-12-28 16:54:57.7845264 +0800 CST m=+837.349816401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go[ /?a=1  请求方法:[ [ /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+ ] 请求url: 2018-12-28 16:54:57.7835288 +0800 CST m=+837.348818801 ] 请求url: GET 2018-12-28 16:54:57.7885154 +0800 CST m=+837.353805401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ [ 2018-12-28 16:54:57.785524 +0800 CST m=+837.350814001 ] 请求url: /?a=1  请求方法:/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: a=1 ]
+E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/?a=1  请求方法:GET [ 2018-12-28 16:54:57.7895136 +0800 CST m=+837.354803601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+/
+[ info ] 当前请求:/
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7885154 +0800 CST m=+837.353805401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+
+[ info ] [ 请求参数 ] [ a=1 ]
+localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7885154 +0800 CST m=+837.353805401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 2018-12-28 16:54:57.7885154 +0800 CST m=+837.353805401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7905102 +0800 CST m=+837.355800201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7915075 +0800 CST m=+837.356797501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 16:54:57.7915075 +0800 CST m=+837.356797501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:57:19.261304 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:57:19.2762904 +0800 CST m=+978.841580401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:57:24.700767 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:57:24.7237035 +0800 CST m=+984.288993501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:57:25.213287 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:57:25.2272486 +0800 CST m=+984.792538601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:57:25.612459 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:57:25.6274186 +0800 CST m=+985.192708601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:57:25.965310 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:57:25.9832462 +0800 CST m=+985.548536201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:57:26.324660 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:57:26.3406176 +0800 CST m=+985.905907601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:57:26.684292 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:57:26.7002516 +0800 CST m=+986.265541601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:57:27.085307 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:57:27.1002656 +0800 CST m=+986.665555601 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[xorm] [info]  2018/12/28 16:57:27.485218 [SQL] SELECT `id`, `auth_name` FROM `account_auth`
+[ 2018-12-28 16:57:27.4981869 +0800 CST m=+987.063476901 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
 
