@@ -1,0 +1,9 @@
+[ 2018-12-28 13:25:14.591066 +0800 CST m=+621.597021501 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [47s]
+[ info ] [ 当前行号: 18 ]  当前错误文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 13:28:18.9861866 +0800 CST m=+63.892592901 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+
