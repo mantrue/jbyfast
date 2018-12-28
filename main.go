@@ -3,14 +3,13 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"penghui.com/config"
+	_ "penghui.com/config"
 	"penghui.com/lib/web"
 	"penghui.com/router"
 	"time"
 )
 
 func main() {
-	config.InitConifg()
 	//fmt.Println(config.Conf.Runtime.File)
 	go func() {
 		tick := time.NewTicker(time.Second * 5)

@@ -36,9 +36,9 @@ type RuntimeConf struct {
 	File string `mapstructure:"file"`
 }
 
-func InitConifg() error {
-	err := BaseConfig()
-	return err
+func init() {
+	fmt.Println("config init...")
+	BaseConfig()
 }
 
 func BaseConfig() error {

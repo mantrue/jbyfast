@@ -1,9 +1,11 @@
 package logger
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"os"
+	"penghui.com/config"
 )
 
 var (
@@ -15,11 +17,11 @@ var (
 var ErrFileInfo *os.File
 var err error
 
-//var fileurl = config.Conf.Runtime.File
+var fileurl = config.Conf.Runtime.File
 
 func init() {
-
-	ErrFileInfo, err = os.OpenFile("E:/goroot/src/penghui.com/runtime/errors.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	fmt.Println("log init...")
+	ErrFileInfo, err = os.OpenFile(fileurl, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		log.Fatalln("打开日志文件失败：", err)
 	}
