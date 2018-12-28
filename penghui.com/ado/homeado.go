@@ -1,5 +1,8 @@
 package ado
 
-func TechIndex() ([]byte, error) {
-	return []byte("hello"), nil
+import "penghui.com/model"
+
+func UserAdo() ([]model.User, error) {
+	user, err := model.UserModel()
+	return user, err
 }

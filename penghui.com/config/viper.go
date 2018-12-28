@@ -5,6 +5,8 @@ import (
 	"github.com/spf13/viper"
 )
 
+const ConfigPath_URL = "E:/goroot/src/penghui.com/config"
+
 var (
 	Conf *Config
 )
@@ -43,9 +45,9 @@ func init() {
 
 func BaseConfig() error {
 	Conf = NewConfigViper()
-	viper.SetConfigName("base")                             // 配置文件的名字
-	viper.SetConfigType("toml")                             // 配置文件的类型
-	viper.AddConfigPath("E:/goroot/src/penghui.com/config") // 配置文件的路径
+	viper.SetConfigName("base")         // 配置文件的名字
+	viper.SetConfigType("toml")         // 配置文件的类型
+	viper.AddConfigPath(ConfigPath_URL) // 配置文件的路径
 	if err := viper.ReadInConfig(); err != nil {
 		return err
 	}

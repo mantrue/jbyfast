@@ -35,11 +35,11 @@ func (h *HomeController) MyLog(w http.ResponseWriter, r *http.Request, ps httpro
 
 //首页
 func (h *HomeController) TechIndex(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	_, err := ado.TechIndex()
+	res, err := ado.UserAdo()
 	if err != nil {
 		web.RespFail(w, r, 404, err, Filepath, Line)
 	} else {
-		web.RespJson(w, r, 200, map[string]string{"index": "index"}, Filepath, Line)
+		web.RespJson(w, r, 200, res, Filepath, Line)
 	}
 
 }

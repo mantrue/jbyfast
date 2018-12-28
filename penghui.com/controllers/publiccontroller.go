@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"encoding/json"
+	"github.com/julienschmidt/httprouter"
+	"net/http"
 	"time"
 )
 
@@ -9,6 +11,9 @@ type PublicController struct {
 	Tstart time.Time
 	Tend   time.Time
 	Tsub   time.Duration
+	W      http.ResponseWriter
+	R      *http.Request
+	S      httprouter.Params
 }
 
 func (p *PublicController) ToJson(data interface{}) ([]byte, error) {

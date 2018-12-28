@@ -38,7 +38,7 @@ func RespFail(w http.ResponseWriter, r *http.Request, status int, err error, fil
 	zerolog.TimeFieldFormat = "2006-01-02 15:04:05"
 
 	if config.Conf.Web.Debug == "true" {
-		fmt.Println("fail request", HTTP_FAIL_REQUEST_NUM)
+		fmt.Println("http request", HTTP_FAIL_REQUEST_NUM)
 		//记录请求日志
 		log.Info().Msg(err.Error())
 
@@ -99,13 +99,13 @@ func RespJson(w http.ResponseWriter, r *http.Request, status int, value interfac
 	r.ParseForm()
 
 	//记录log日志
-	HTTP_FAIL_REQUEST_NUM++
+	HTTP_RIGHT_REQUEST_NUM++
 
 	log := zerolog.New(os.Stderr).With().Timestamp().Logger()
 	zerolog.TimeFieldFormat = "2006-01-02 15:04:05"
 
 	if config.Conf.Web.Debug == "true" {
-		fmt.Println("fail request", HTTP_FAIL_REQUEST_NUM)
+		fmt.Println("http request", HTTP_RIGHT_REQUEST_NUM)
 
 		var args string
 		if r.Method == http.MethodGet {

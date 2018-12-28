@@ -18,6 +18,5 @@ func main() {
 		}
 	}()
 
-	//升级为websocket
 	http.ListenAndServe(":80", router.Register())
 }
