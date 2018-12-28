@@ -2,4 +2,32 @@
 [ info ] 当前请求:localhost/ [0s]
 [ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
 [ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 13:57:27.5219799 +0800 CST m=+170.114621701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 13:57:28.7052613 +0800 CST m=+171.297903101 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 14:02:06.6082174 +0800 CST m=+0.930877201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 14:03:15.7066438 +0800 CST m=+1.650809201 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 14:03:22.1449443 +0800 CST m=+8.089109701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 14:05:00.0598894 +0800 CST m=+1.921495401 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
+[ 2018-12-28 14:05:05.3611767 +0800 CST m=+7.222782701 ] 请求url: /?a=1  请求方法:GET /
+[ info ] 当前请求:localhost/ [0s]
+[ info ] [ 当前行号: 18 ]  当前文件: E:/goroot/src/penghui.com/controllers/homecontroller.go
+[ info ] [ 请求参数 ] [ a=1 ]
 

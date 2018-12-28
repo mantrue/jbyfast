@@ -106,8 +106,6 @@ func RespJson(w http.ResponseWriter, r *http.Request, status int, value interfac
 
 	if config.Conf.Web.Debug == "true" {
 		fmt.Println("fail request", HTTP_FAIL_REQUEST_NUM)
-		//记录请求日志
-		log.Info().Msg(err.Error())
 
 		var args string
 		if r.Method == http.MethodGet {
@@ -119,6 +117,8 @@ func RespJson(w http.ResponseWriter, r *http.Request, status int, value interfac
 			body = strings.Replace(body, "\r\n", "", -1)
 			args = body
 		}
+		//记录请求日志
+		log.Info().Msg("weburl:" + r.Host + r.URL.Path + "=====args:" + args)
 
 		errdata := map[string]interface{}{"Args": args, "Lline": line, "File": file, "SetTime": time.Now(), "error": "", "Request": r.URL, "Ip": r.Host, "Method": r.Method, "Url": r.URL.Path, "WebUrl": r.Host + r.URL.Path, "Line": "a.php"}
 		text := logger.TempText()
