@@ -15,6 +15,7 @@ type Config struct {
 	Mysql   MysqlConf
 	Web     WebConf
 	Runtime RuntimeConf
+	Token   SecretConf
 }
 
 type MysqlConf struct {
@@ -36,6 +37,10 @@ type WebConf struct {
 
 type RuntimeConf struct {
 	File string `mapstructure:"file"`
+}
+
+type SecretConf struct {
+	Token string `mapstructure:"token"`
 }
 
 func init() {

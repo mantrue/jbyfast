@@ -2,11 +2,14 @@ package controllers
 
 import (
 	"errors"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/julienschmidt/httprouter"
 	"net/http"
 	"penghui.com/ado"
+	"penghui.com/config"
 	"penghui.com/lib/web"
 	"runtime"
+	"time"
 )
 
 var (
@@ -54,4 +57,20 @@ func (h *HomeController) NewsIndex(w http.ResponseWriter, r *http.Request, ps ht
 		web.RespJson(w, r, 200, map[string]string{"news": "news"}, Filepath, Line)
 	}
 
+}
+
+//登录
+func (h *HomeController) Login(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	token := jwt.New(jwt.SigningMethodHS256)
+	claims := token.Claims.(jwt.MapClaims)
+	claims["name"] = "Jon Snow"
+	claims["admin"] = true
+	claims["exp"] = time.Now().Add(time.Hour * 72).Unix()
+	t, err := token.SignedString([]byte(config.Conf.Token.Token))
+
+	if err != nil {
+		web.RespFail(w, r, 500, err, Filepath, Line)
+	}
+
+	web.RespJson(w, r, 200, map[string]string{"token": t}, Filepath, Line)
 }

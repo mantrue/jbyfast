@@ -15,3 +15,6 @@ debug = "true"
 
 [runtime]
 file = "E:/goroot/src/penghui.com/runtime/errors.log"
+
+[token]
+token = "jingbanyun.com"
