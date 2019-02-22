@@ -32,6 +32,7 @@ func GetAuth(c *gin.Context) {
 
 	data := make(map[string]interface{})
 	code := e.INVALID_PARAMS
+
 	if ok {
 		isExist := models.CheckAuth(username, password)
 		if isExist {
