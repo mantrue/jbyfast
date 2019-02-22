@@ -6,9 +6,18 @@ import (
 
 	"gin-blog/pkg/setting"
 	"gin-blog/routers"
+	"github.com/gin-gonic/gin"
+	"io"
+	"os"
 )
 
 func main() {
+
+	// 创建记录日志的文件
+	f, _ := os.Create("request.log")
+
+	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
+
 	router := routers.InitRouter()
 
 	s := &http.Server{

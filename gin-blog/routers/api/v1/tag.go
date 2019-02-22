@@ -7,6 +7,7 @@ import (
 	//"github.com/astaxie/beego/validation"
 	"github.com/Unknwon/com"
 
+	"gin-blog/models"
 	"gin-blog/pkg/e"
 	"gin-blog/pkg/setting"
 	"gin-blog/pkg/util"
@@ -42,6 +43,22 @@ func GetTags(c *gin.Context) {
 
 //新增文章标签
 func AddTag(c *gin.Context) {
+	var t models.Tag
+	t.Name = c.Query("name")
+	id, err := mysql_service.AddTag(&t)
+
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"code": e.SUCCESS,
+			"msg":  e.GetMsg(e.SUCCESS),
+			"data": map[string]int{"id": id},
+		})
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"code": e.SUCCESS,
+		"msg":  e.GetMsg(e.SUCCESS),
+		"data": map[string]int{"id": id},
+	})
 }
 
 //修改文章标签

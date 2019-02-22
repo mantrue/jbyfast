@@ -16,14 +16,19 @@ type Tag struct {
 
 func GetTags(pageNum int, pageSize int, maps interface{}) (tags []Tag) {
 	db.Where(maps).Offset(pageNum).Limit(pageSize).Find(&tags)
-
 	return
 }
 
 func GetTagTotal(maps interface{}) (count int) {
 	db.Model(&Tag{}).Where(maps).Count(&count)
-
 	return
+}
+
+func AddTag(t *Tag) (int, error) {
+	if err := db.Create(t).Error; err != nil {
+		return 0, err
+	}
+	return t.ID, nil
 }
 
 func (tag *Tag) BeforeCreate(scope *gorm.Scope) error {
