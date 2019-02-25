@@ -9,7 +9,7 @@ import (
 
 var RedisConn *redis.Pool
 
-func Setup() error {
+func NewReidsInit() error {
 	RedisConn = &redis.Pool{
 		MaxIdle:     setting.RedisSetting.MaxIdle,
 		MaxActive:   setting.RedisSetting.MaxActive,
@@ -32,7 +32,6 @@ func Setup() error {
 			return err
 		},
 	}
-
 	return nil
 }
 

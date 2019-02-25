@@ -7,10 +7,13 @@ import (
 	"gin-blog/pkg/setting"
 	"gin-blog/routers/api"
 	"gin-blog/routers/api/v1"
+	"net/http"
 )
 
 func InitRouter() *gin.Engine {
 	r := gin.New()
+
+	r.StaticFS("/static", http.Dir("./static")) //加载静态资源
 
 	r.Use(gin.Logger())
 

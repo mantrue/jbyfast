@@ -1,11 +1,13 @@
 package mysql_service
 
 import (
+	"fmt"
 	"gin-blog/models"
 )
 
 func GetTags(pageNum int, pageSize int, maps interface{}) []models.Tag {
 	tags := models.GetTags(pageNum, pageSize, maps)
+	fmt.Println(tags)
 	return tags
 }
 

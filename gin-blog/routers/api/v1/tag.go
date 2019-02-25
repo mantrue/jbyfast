@@ -7,10 +7,12 @@ import (
 	//"github.com/astaxie/beego/validation"
 	"github.com/Unknwon/com"
 
+	"gin-blog/gredis"
 	"gin-blog/models"
 	"gin-blog/pkg/e"
 	"gin-blog/pkg/setting"
 	"gin-blog/pkg/util"
+	"gin-blog/service/cache_service"
 	"gin-blog/service/mysql_service"
 )
 
@@ -33,6 +35,11 @@ func GetTags(c *gin.Context) {
 
 	data["lists"] = mysql_service.GetTags(util.GetPage(c), setting.PageSize, maps)
 	data["total"] = mysql_service.GetTagTotal(maps)
+
+	//redis操作逻辑
+	tg := cache_service.Tag{100, "penghui", 1, 1, 1}
+	gredis.Set(tg.GetTagsKey(), tg.GetTagsKey(), 60)
+	data["rediskey"] = tg.GetTagsKey()
 
 	c.JSON(http.StatusOK, gin.H{
 		"code": e.SUCCESS,

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"gin-blog/gredis"
 	"gin-blog/pkg/setting"
 	"gin-blog/routers"
 	"github.com/gin-gonic/gin"
@@ -13,8 +14,14 @@ import (
 
 func main() {
 
+	err := gredis.NewReidsInit() //初始化redis
+	if err != nil {
+		fmt.Println("redis初始化失败=====" + err.Error())
+		return
+	}
+
 	// 创建记录日志的文件
-	f, _ := os.Create("request.log")
+	f, _ := os.Create("./runtime/request.log")
 
 	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
 
