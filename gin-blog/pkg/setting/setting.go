@@ -17,9 +17,10 @@ var (
 	ReadTimeout  time.Duration
 	WriteTimeout time.Duration
 
-	PageSize     int
-	JwtSecret    string
-	JWT_TIME_DIE time.Duration
+	PageSize      int
+	JwtSecret     string
+	JWT_TIME_DIE  time.Duration
+	MaxRequestNum float64 = 60
 )
 
 type Redis struct {

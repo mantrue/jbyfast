@@ -4,10 +4,14 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"gin-blog/middleware/jwt"
+	"gin-blog/middleware/tollbooth_gin"
 	"gin-blog/pkg/setting"
 	"gin-blog/routers/api"
 	"gin-blog/routers/api/v1"
+	"github.com/didip/tollbooth"
+	"github.com/didip/tollbooth/limiter"
 	"net/http"
+	"time"
 )
 
 func InitRouter() *gin.Engine {
@@ -21,10 +25,14 @@ func InitRouter() *gin.Engine {
 
 	gin.SetMode(setting.RunMode)
 
-	r.GET("/auth", api.GetAuth)
+	lmt := tollbooth.NewLimiter(setting.MaxRequestNum, &limiter.ExpirableOptions{DefaultExpirationTTL: time.Minute})
+	lmt.SetIPLookups([]string{"RemoteAddr", "X-Forwarded-For", "X-Real-IP"}) //初始化IP访问控制
+
+	r.GET("/auth", tollbooth_gin.LimitHandler(lmt), api.GetAuth) //接入限速中间件
 
 	apiv1 := r.Group("/api/v1")
 	apiv1.Use(jwt.JWT()) //接入jwt中间件
+	//	apiv1.Use(tollbooth_gin.LimitHandler(lmt)) //接入限速中间件
 
 	{
 		//获取标签列表
