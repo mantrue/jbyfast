@@ -16,7 +16,7 @@ func LimitHandler(lmt *limiter.Limiter) gin.HandlerFunc {
 			c.JSON(http.StatusForbidden, gin.H{
 				"code": e.SUCCESS,
 				"msg":  e.GetMsg(e.FORBIDDEN),
-				"data": "",
+				"data": map[string]string{},
 			})
 
 			c.Abort()

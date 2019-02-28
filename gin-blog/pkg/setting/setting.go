@@ -20,7 +20,7 @@ var (
 	PageSize      int
 	JwtSecret     string
 	JWT_TIME_DIE  time.Duration
-	MaxRequestNum float64 = 60
+	MaxRequestNum float64 = 2
 )
 
 type Redis struct {

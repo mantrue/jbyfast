@@ -25,7 +25,7 @@ func InitRouter() *gin.Engine {
 
 	gin.SetMode(setting.RunMode)
 
-	lmt := tollbooth.NewLimiter(setting.MaxRequestNum, &limiter.ExpirableOptions{DefaultExpirationTTL: time.Minute})
+	lmt := tollbooth.NewLimiter(setting.MaxRequestNum, &limiter.ExpirableOptions{DefaultExpirationTTL: time.Second})
 	lmt.SetIPLookups([]string{"RemoteAddr", "X-Forwarded-For", "X-Real-IP"}) //初始化IP访问控制
 
 	r.GET("/auth", tollbooth_gin.LimitHandler(lmt), api.GetAuth) //接入限速中间件
