@@ -7,6 +7,7 @@ import (
 	//"github.com/astaxie/beego/validation"
 	"github.com/Unknwon/com"
 
+	"fmt"
 	"gin-blog/gredis"
 	"gin-blog/models"
 	"gin-blog/pkg/e"
@@ -74,4 +75,22 @@ func EditTag(c *gin.Context) {
 
 //删除文章标签
 func DeleteTag(c *gin.Context) {
+}
+
+//上传
+func UploadTag(c *gin.Context) {
+
+	file, err := c.FormFile("filename")
+	if err != nil {
+		c.String(http.StatusBadRequest, fmt.Sprintf("get form err: %s", err.Error()))
+		return
+	}
+	file.Filename = "copy_" + file.Filename
+	if err := c.SaveUploadedFile(file, file.Filename); err != nil {
+		c.String(http.StatusBadRequest, fmt.Sprintf("upload file err: %s", err.Error()))
+		return
+	}
+
+	c.String(http.StatusOK, fmt.Sprintf("File %s uploaded success", file.Filename))
+
 }
