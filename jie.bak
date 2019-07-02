@@ -1,0 +1,95 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/go-xorm/core"
+	"github.com/go-xorm/xorm"
+	"os"
+	"time"
+)
+
+type Message struct {
+	Data Res
+}
+
+type Res struct {
+	Items []resitem
+}
+
+type resitem struct {
+	Sequence   int    `json:"sequence"`
+	Code       string `json:"code"`
+	ParentCode string `json:"parentCode"`
+	Level      int    `json:"level"`
+	Name       string `json:"name"`
+}
+
+var (
+	engine  *xorm.Engine
+	err     error
+	fileurl = ""
+)
+
+func init() {
+	var err error
+	engine, err = xorm.NewEngine("mysql", "root:xxx@tcp(118.190.65.33:3306)/jingtongcloud?charset=utf8")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(engine)
+
+	engine.ShowSQL(true)
+	engine.Logger().SetLevel(core.LOG_DEBUG)
+	f, err := os.OpenFile(fileurl, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+
+	if err != nil {
+		println(err.Error())
+		return
+	}
+	engine.SetLogger(xorm.NewSimpleLogger(f))
+}
+
+func main() {
+	f, err := os.Open("E:/phptest/appserver/exerciseData0/jiaocaiTree-1018KB.json")
+	if err != nil {
+		panic(err)
+	}
+	var m Message
+	json.NewDecoder(f).Decode(&m)
+	var num int
+
+	for _, v := range m.Data.Items {
+		if v.Level == 6 { //获取节信息
+			var kp KnowledgePoint
+			_, err := engine.Where("map_id=?", v.ParentCode).Get(&kp)
+			if err != nil {
+				continue
+			}
+			num++
+
+			akp := KnowledgePoint{CourseId: kp.CourseId, TextbookId: kp.TextbookId, KnowledgeName: v.Name, Level: 2, ParentId: kp.Id, CreateAt: time.Now().Unix(), Html: v.Name, MapId: v.Code}
+
+			sql := "insert into knowledge_point(course_id,textbook_id,knowledge_name,level,parent_id,create_at,html,map_id) values (?, ?, ?, ?, ?, ?, ?, ?)"
+			_, err = engine.Exec(sql, akp.CourseId, akp.TextbookId, akp.KnowledgeName, akp.Level, akp.ParentId, akp.CreateAt, akp.Html, akp.MapId)
+
+			if err != nil {
+				continue
+			}
+			fmt.Printf("当前执行到%d条", num)
+		}
+	}
+}
+
+type KnowledgePoint struct {
+	Id            int    `json:"id"`
+	CourseId      string `json:"course_id"`
+	TextbookId    string `json:"textbook_id"`
+	KnowledgeName string `json:"knowledge_name"`
+	Level         int    `json:"level"`
+	ParentId      int    `json:"parent_id"`
+	CreateAt      int64  `json:"create_at"`
+	Html          string `json:"html"`
+	MapId         string `json:"map_id"`
+}

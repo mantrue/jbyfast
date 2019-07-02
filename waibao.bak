@@ -1,0 +1,234 @@
+package main
+
+import (
+	"encoding/csv"
+	"fmt"
+	"gin-blog/pkg/logging"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
+	"log"
+	"os"
+	"time"
+)
+
+var db *gorm.DB
+
+func init() {
+	var (
+		err                                               error
+		dbType, dbName, user, password, host, tablePrefix string
+	)
+
+	if err != nil {
+		log.Fatal(2, "Fail to get section 'database': %v", err)
+	}
+
+	dbType = "xxx"
+	dbName = "ex1"
+	user = "xxxx"
+	password = "xxx"
+	host = "rm-xxx.mysql.rds.aliyuncs.com"
+	tablePrefix = ""
+
+	db, err = gorm.Open(dbType, fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
+		user,
+		password,
+		host,
+		dbName))
+
+	if err != nil {
+		logging.Info("=======数据库连接失败=======")
+		log.Println(err)
+	}
+
+	gorm.DefaultTableNameHandler = func(db *gorm.DB, defaultTableName string) string {
+		return tablePrefix + defaultTableName
+	}
+
+	db.LogMode(true)
+	db.SingularTable(true)
+
+	db.DB().SetMaxIdleConns(10)
+	db.DB().SetMaxOpenConns(100)
+}
+
+var num int
+
+func main() {
+
+	go func() {
+		timer := time.NewTicker(time.Second * 1)
+		for {
+			<-timer.C
+			num++
+			fmt.Printf("=====当前执行时间:%d秒=====请等待程序执行完毕\n", num)
+		}
+	}()
+	//获取分组的习题数量
+	var gexlist []Gettic
+	db.
+		Table("exercises_textbook_tree_info_createexercise").
+		Group("festival").
+		Select("festival,count(exercises_createexercise_id) as counte").
+		Scan(&gexlist)
+
+	selectExCountMap := make(map[int]int)
+
+	for _, obj := range gexlist {
+		selectExCountMap[obj.Festival] = obj.Counte
+	}
+	//获取有习题的章节信息
+	var exlist []Ettic
+	db.
+		Table("exercises_textbook_tree_info_createexercise").
+		Order("version_id,course_id,grade_id,section_id,chapter,festival").
+		Group("festival").
+		Select("version_id,course_id,grade_id,section_id,chapter,festival").
+		Scan(&exlist)
+	isMaplist := make(map[string]int)
+
+	for _, obj := range exlist {
+		key := fmt.Sprintf("%d", obj.VersionId) + fmt.Sprintf("%d", obj.CourseId) + fmt.Sprintf("%d", obj.GradeId) + fmt.Sprintf("%d", obj.SectionId) + fmt.Sprintf("%d", obj.Chapter) + fmt.Sprintf("%d", obj.Festival)
+		isMaplist[key] = selectExCountMap[obj.Festival]
+	}
+
+	var allex []Allex
+	db.
+		Table("exercises_textbook_tree_breviary").
+		Joins("JOIN exercises_textbook_tree_info ON exercises_textbook_tree_info.textbook_tree_breviary_id = exercises_textbook_tree_breviary.id").
+		Order("exercises_textbook_tree_breviary.version_id,exercises_textbook_tree_breviary.course_id,exercises_textbook_tree_breviary.grade_id,exercises_textbook_tree_breviary.school_term,exercises_textbook_tree_info.id").
+		Group("exercises_textbook_tree_info.id").
+		Select("exercises_textbook_tree_breviary.version_id,exercises_textbook_tree_breviary.course_id,exercises_textbook_tree_breviary.grade_id,exercises_textbook_tree_breviary.school_term as section_id,exercises_textbook_tree_info.id as chapter").
+		Scan(&allex)
+
+	var data []Allex
+
+	for _, v := range allex {
+		var kpd []ExercisesTextbookTreeInfo
+		db.Where("parent_id = ?", v.Chapter).Find(&kpd)
+		if len(kpd) > 0 {
+			//bt[i].kp = kpd
+			for _, cv := range kpd {
+				key := fmt.Sprintf("%d", v.VersionId) + fmt.Sprintf("%d", v.CourseId) + fmt.Sprintf("%d", v.GradeId) + fmt.Sprintf("%d", v.SectionId) + fmt.Sprintf("%d", v.Chapter) + fmt.Sprintf("%d", cv.Id)
+				count := isMaplist[key] //获取该章节下的习题数量
+				//bt[i].kp[ci].ExCount = count
+				data = append(data, Allex{v.VersionId, v.CourseId, v.GradeId, v.SectionId, v.Chapter, cv.Id, count})
+			}
+		} else {
+			v.ExCount = 0
+			data = append(data, Allex{v.VersionId, v.CourseId, v.GradeId, v.SectionId, v.Chapter, 0, 0})
+		}
+	}
+
+	//獲取版本
+	var vl []ExercisesTextbookVersion
+	db.Find(&vl)
+	vlMapList := map[int]string{}
+	for _, obj := range vl {
+		vlMapList[obj.Id] = obj.VersionName
+	}
+
+	//获取学科
+	var ec []ExercisesCourse
+	db.Find(&ec)
+	ecMapList := map[int]string{}
+	for _, obj := range ec {
+		ecMapList[obj.Id] = obj.Name
+	}
+	//获取年級
+	var abt []DictGrade
+	db.Find(&abt)
+	abtMapList := map[int]string{}
+	for _, obj := range abt {
+		abtMapList[obj.Id] = obj.Grade
+	}
+	//分冊
+	gMapList := map[int]string{1: "上冊", 2: "下冊", 3: "全一冊"}
+
+	//获取章节
+
+	//章 小章節
+	//var kn []ExercisesTextbookTreeInfo
+	//db.Select("id,tree_point_name").Where("level = ? AND id > ?", 1, 0).Find(&kn)
+	//
+	//zhangMapList := map[int]string{}
+	//for _, obj := range kn {
+	//	zhangMapList[obj.Id] = obj.TreePointName
+	//}
+	//
+	//var cn []ExercisesTextbookTreeInfo
+	//db.Select("id,tree_point_name").Where("level = ? AND id > ?", 2, 0).Find(&cn)
+	//
+	//for _, obj := range cn {
+	//	zhangMapList[obj.Id] = obj.TreePointName
+	//}
+
+	var csvInfo = [][]string{}
+	for _, obj := range data {
+		var kname ExercisesTextbookTreeInfo
+		db.Select("id,tree_point_name").Where("id = ?", obj.Chapter).Find(&kname)
+
+		var jname ExercisesTextbookTreeInfo
+		db.Select("id,tree_point_name").Where("id = ?", obj.Festival).Find(&jname)
+
+		info := []string{vlMapList[obj.VersionId], ecMapList[obj.CourseId], abtMapList[obj.GradeId], gMapList[obj.SectionId], kname.TreePointName, jname.TreePointName, fmt.Sprintf("%d", obj.ExCount)}
+		csvInfo = append(csvInfo, info)
+	}
+
+	f, err := os.Create("waitree.csv") //创建文件
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+	f.WriteString("\xEF\xBB\xBF") // 写入UTF-8 BOM
+	w := csv.NewWriter(f)
+	w.WriteAll(csvInfo)
+	w.Flush()
+}
+
+type ExercisesTextbookVersion struct {
+	Id          int    `json:"id"`
+	VersionName string `json:"version_name"`
+}
+
+type DictGrade struct {
+	Id    int    `json:"id"`
+	Grade string `json:"grade"`
+}
+type ExercisesCourse struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}
+
+type ExercisesTextbookTreeInfo struct {
+	Id            int    `json:"id"`
+	ParentId      int    `json:"parent_id"`
+	TreePointName string `json:"tree_point_name"`
+}
+
+//查詢全部章節
+type Allex struct {
+	VersionId int `json:"version_id"`
+	CourseId  int `json:"course_id"`
+	GradeId   int `json:"grade_id"`
+	SectionId int `json:"section_id"`
+	Chapter   int `json:"chapter"`
+	Festival  int `json:"festival"`
+	ExCount   int `json:"excount"`
+}
+
+//分组的数量
+type Gettic struct {
+	Counte   int `json:"counte"`
+	Festival int `json:"festival"`
+}
+
+type Ettic struct {
+	VersionId int `json:"version_id"`
+	CourseId  int `json:"course_id"`
+	GradeId   int `json:"grade_id"`
+	SectionId int `json:"section_id"`
+	Chapter   int `json:"chapter"`
+	Festival  int `json:"festival"`
+	ExCount   int `json:"excount"`
+}

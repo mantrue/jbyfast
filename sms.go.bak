@@ -1,0 +1,97 @@
+package main
+
+import (
+	"fmt"
+	"github.com/360EntSecGroup-Skylar/excelize"
+	"github.com/goroom/aliyun_sms"
+	"os"
+	"strings"
+)
+
+var (
+	path     string
+	isfile   bool
+	mytel    []string
+	temp     string
+	TempCode string
+)
+
+func init() {
+	fmt.Println("..............程序已经运行 请按下面的提示进行操作 作者：承鹏辉 QQ:782319392 ................")
+	//SMS_152512542
+}
+
+func main() {
+Loop:
+	for {
+		fmt.Println("..............请输入xlsx文件的路径 或者手动拖动xlsx文件到当前窗口 然后按回车键进行结束................")
+		fmt.Scanf("%s\n", &path)
+		//判断文件是否存在
+		isfile, _ := PathExists(path)
+
+		fmt.Println("..............请输入模板代码 比如:SMS_152512542................")
+		fmt.Scanf("%s\n", &TempCode)
+
+		if isfile == true {
+			break
+		}
+
+	}
+
+	//获取xml文档中的内容
+	xlsx, err := excelize.OpenFile(path)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	rows := xlsx.GetRows("Sheet1")
+
+	for _, row := range rows {
+		for _, colCell := range row {
+			if len(colCell) == 11 && colCell != "" {
+				colCell = strings.TrimSpace(colCell)
+				colCell = strings.Replace(colCell, "# #", "", -1)
+				mytel = append(mytel, colCell)
+			}
+		}
+	}
+
+	if len(mytel) == 0 {
+		fmt.Println("没有要发送的手机号码,请重新运行程序,并且设置xlsx的手机号")
+		return
+	}
+
+	telstr := strings.Join(mytel, ",")
+	s, err := SendSms(telstr)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(s)
+	fmt.Println("。。。。。。已经发送成功了。。。。。")
+	goto Loop
+}
+
+func PathExists(path string) (bool, error) {
+	_, err := os.Stat(path)
+	if err == nil {
+		return true, nil
+	}
+	if os.IsNotExist(err) {
+		return false, nil
+	}
+	return false, err
+}
+
+func SendSms(tel string) (string, error) {
+	aliyun_sms, err := aliyun_sms.NewAliyunSms("xxx", TempCode, "xxx", "xxx")
+	if err != nil {
+		return "", err
+	}
+	err = aliyun_sms.Send(tel, `{"VerifyCode":"1234","Minutes":"30"}`)
+	if err != nil {
+		fmt.Println(err)
+		return "", err
+	}
+	return "success", nil
+}

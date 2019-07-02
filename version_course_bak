@@ -1,0 +1,131 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/go-xorm/core"
+	"github.com/go-xorm/xorm"
+	"os"
+	"time"
+)
+
+type Message struct {
+	Data Res
+}
+
+type Res struct {
+	Items []resitem
+}
+
+type resitem struct {
+	Sequence   int    `json:"sequence"`
+	Code       string `json:"code"`
+	ParentCode string `json:"parentCode"`
+	Level      int    `json:"level"`
+	Name       string `json:"name"`
+}
+
+var (
+	engine  *xorm.Engine
+	err     error
+	fileurl = ""
+)
+
+func init() {
+	var err error
+	engine, err = xorm.NewEngine("mysql", "root:xxx@tcp(118.190.65.33:3306)/jingtongcloud?charset=utf8")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(engine)
+
+	engine.ShowSQL(true)
+	engine.Logger().SetLevel(core.LOG_DEBUG)
+	f, err := os.OpenFile(fileurl, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+
+	if err != nil {
+		println(err.Error())
+		return
+	}
+	engine.SetLogger(xorm.NewSimpleLogger(f))
+}
+
+func main() {
+	cc := make(chan bool)
+	cv := make(chan bool)
+	go updateCourse(cc)
+	go updateVersion(cv)
+
+	for {
+		select {
+		case val := <-cc:
+			if val == true {
+				fmt.Println("学科处理完毕")
+			}
+		case cvl := <-cv:
+			if cvl == true {
+				fmt.Println("版本处理完毕")
+			}
+
+		case <-time.Tick(time.Second * 1):
+			fmt.Println("...ping...程序执行完毕...")
+		}
+	}
+
+}
+
+func updateVersion(cv chan bool) {
+	f, err := os.Open("E:/phptest/appserver/exerciseData0/jiaocaiTree-1018KB.json")
+	if err != nil {
+		panic(err)
+	}
+
+	var m Message
+	json.NewDecoder(f).Decode(&m)
+
+	var mymap = make(map[string]string)
+
+	for _, v := range m.Data.Items {
+		if v.Level == 3 {
+			arr := v.Code[4:]
+			if _, ok := mymap[string(arr)]; !ok {
+				mymap[string(arr)] = v.Name
+			}
+		}
+	}
+	if len(mymap) > 0 {
+		for k, v := range mymap {
+			sql := "insert into biz_textbook_publishing_contact(publishing_house_id,publishing_house) values (?, ?)"
+			_, err := engine.Exec(sql, k, v)
+			if err != nil {
+				continue
+			}
+		}
+	}
+
+	cv <- true
+	close(cv)
+}
+
+func updateCourse(cc chan bool) {
+	f, err := os.Open("E:/phptest/appserver/exerciseData0/jiaocaiTree-1018KB.json")
+	if err != nil {
+		panic(err)
+	}
+	var m Message
+	json.NewDecoder(f).Decode(&m)
+	for _, v := range m.Data.Items {
+		if v.Level == 2 {
+
+			arr := v.Code[2:]
+			map_id := map[string]string{"map_id": string(arr)}
+			_, err := engine.Table("exercises_course").Where("name=?", v.Name).Update(map_id)
+			if err != nil {
+				continue
+			}
+		}
+	}
+	cc <- true
+	close(cc)
+}

@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"errors"
+	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/julienschmidt/httprouter"
 	"net/http"
@@ -25,6 +26,17 @@ type HomeController struct {
 	PublicController
 }
 
+//获取redis
+func (h *HomeController) MyRedis(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	res, err := ado.UserKeyId()
+	if err != nil {
+		web.RespFail(w, r, 404, err, Filepath, Line)
+	} else {
+		web.RespJson(w, r, 200, res, Filepath, Line)
+	}
+
+}
+
 //首页
 func (h *HomeController) MyLog(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	err := errors.New("")
@@ -38,6 +50,7 @@ func (h *HomeController) MyLog(w http.ResponseWriter, r *http.Request, ps httpro
 
 //首页
 func (h *HomeController) TechIndex(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	fmt.Println(ps.ByName("names"))
 	res, err := ado.UserAdo()
 	if err != nil {
 		web.RespFail(w, r, 404, err, Filepath, Line)

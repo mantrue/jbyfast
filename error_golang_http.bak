@@ -1,0 +1,60 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"reflect"
+	"strings"
+	"sync"
+	"time"
+)
+
+type HomeController struct {
+	w  http.ResponseWriter
+	r  *http.Request
+	qt time.Time
+	et time.Time
+	sync.Mutex
+}
+
+type UserController struct {
+	HomeController
+}
+
+func main() {
+	http.HandleFunc("/Index", Auth(&UserController{}))
+	http.HandleFunc("/Run", Auth(&UserController{}))
+	http.HandleFunc("/Going", Auth(&UserController{}))
+
+	http.ListenAndServe(":8090", nil)
+}
+
+func Auth(u *UserController) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println(r.URL.Path + "this is auth path")
+		path := strings.Split(r.URL.Path, "/")
+
+		u.w = w
+		u.r = r
+		u.qt = time.Now()
+
+		ele := reflect.ValueOf(u)
+		ele.MethodByName(path[1]).Call(nil)
+	}
+}
+
+func (h *UserController) Index() {
+	fmt.Fprintf(h.w, "%s", "ssssssssworldsssssss")
+	fmt.Fprintf(h.w, "%s", "ssssssssworldsssssss")
+	fmt.Fprintf(h.w, "%s", "ssssssssworldsssssss")
+	//time.Sleep(time.Second * 1)
+	fmt.Fprintf(h.w, "%s", `{"nick":"golang"}`)
+}
+
+func (h *UserController) Run() {
+	fmt.Fprintf(h.w, "%s", "start...")
+	time.Sleep(time.Second * 1)
+	fmt.Fprintf(h.w, "%s", "end...")
+	h.et = time.Now()
+	fmt.Fprintf(h.w, "%s请求耗时....\n", h.et.Sub(h.qt))
+}

@@ -8,12 +8,13 @@ import (
 )
 
 type PublicController struct {
-	Tstart time.Time
-	Tend   time.Time
-	Tsub   time.Duration
-	W      http.ResponseWriter
-	R      *http.Request
-	S      httprouter.Params
+	Tstart    time.Time
+	Tend      time.Time
+	Tsub      time.Duration
+	W         http.ResponseWriter
+	R         *http.Request
+	S         httprouter.Params
+	TokenUser string
 }
 
 func (p *PublicController) ToJson(data interface{}) ([]byte, error) {
@@ -22,4 +23,8 @@ func (p *PublicController) ToJson(data interface{}) ([]byte, error) {
 		return []byte{}, err
 	}
 	return bjson, nil
+}
+
+func (p *PublicController) RpcSend() {
+
 }

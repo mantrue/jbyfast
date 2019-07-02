@@ -1,0 +1,57 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/go-xorm/core"
+	"github.com/go-xorm/xorm"
+	"os"
+)
+
+var (
+	engine  *xorm.Engine
+	err     error
+	fileurl = ""
+)
+
+func init() {
+	var err error
+	engine, err = xorm.NewEngine("mysql", "root:xxx@tcp(115.28.78.221:3306)/jingtongcloud?charset=utf8")
+	if err != nil {
+		panic(err)
+	}
+
+	engine.ShowSQL(true)
+	engine.Logger().SetLevel(core.LOG_DEBUG)
+	f, err := os.OpenFile(fileurl, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+
+	if err != nil {
+		println(err.Error())
+		return
+	}
+	engine.SetLogger(xorm.NewSimpleLogger(f))
+}
+
+func main() {
+	fmt.Println(engine)
+
+	b := make([]BbsReply, 0)
+	err := engine.Find(&b)
+
+	if err != nil {
+		panic(err)
+	}
+	json, err := json.Marshal(b)
+
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(string(json))
+}
+
+type BbsReply struct {
+	Id      int    `json:"id"`
+	Body    string `json:"body"`
+	Creater string `json:"creater"`
+}

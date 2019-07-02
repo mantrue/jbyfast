@@ -1,0 +1,67 @@
+package main
+
+import (
+	"encoding/csv"
+	"fmt"
+	"github.com/PuerkitoBio/goquery"
+	"golang.org/x/text/encoding/simplifiedchinese"
+	"golang.org/x/text/transform"
+	"log"
+	"net/http"
+	"os"
+	"strconv"
+	"strings"
+)
+
+func main() {
+	var info [][]string
+
+	for i := 1; i <= 44; i++ {
+		data := Grasp("http://lawyer.fabang.com/list/15500-0-0-key-1-" + strconv.Itoa(i) + ".html")
+		info = append(info, data...)
+	}
+
+	f, err := os.Create("xinjiang.csv") //创建文件
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+
+	f.WriteString("\xEF\xBB\xBF") // 写入UTF-8 BOM
+
+	w := csv.NewWriter(f)
+
+	w.WriteAll(info)
+	w.Flush()
+
+	fmt.Println("============程序执行完毕============")
+	fmt.Println(info)
+}
+
+func Grasp(url string) [][]string {
+	html, err := http.Get(url)
+
+	if err != nil {
+		panic(err)
+	}
+
+	utf8Reader := transform.NewReader(html.Body,
+		simplifiedchinese.GBK.NewDecoder())
+
+	dom, err := goquery.NewDocumentFromReader(utf8Reader)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	info := [][]string{}
+
+	dom.Find(".lawyerlist").Each(func(i int, selection *goquery.Selection) {
+		userName := selection.Find(".uname").Text()
+		phone := selection.Find(".titler").Text()
+		phone = strings.Replace(phone, "移动电话：", "", -1)
+		address := selection.Find(".lawyertitle").Eq(4).Find(".titlel").Text()
+		address = strings.Replace(address, "所在地区：", "", -1)
+		info = append(info, []string{userName, phone, address})
+	})
+	return info
+}

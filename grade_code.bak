@@ -1,0 +1,105 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/go-xorm/core"
+	"github.com/go-xorm/xorm"
+	"os"
+)
+
+type Message struct {
+	Data Res
+}
+
+type Res struct {
+	Items []resitem
+}
+
+type resitem struct {
+	Sequence   int    `json:"sequence"`
+	Code       string `json:"code"`
+	ParentCode string `json:"parentCode"`
+	Level      int    `json:"level"`
+	Name       string `json:"name"`
+}
+
+var (
+	engine  *xorm.Engine
+	err     error
+	fileurl = ""
+)
+
+func init() {
+	var err error
+	engine, err = xorm.NewEngine("mysql", "root:xxx@tcp(118.190.65.33:3306)/jingtongcloud?charset=utf8")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(engine)
+
+	engine.ShowSQL(true)
+	engine.Logger().SetLevel(core.LOG_DEBUG)
+	f, err := os.OpenFile(fileurl, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+
+	if err != nil {
+		println(err.Error())
+		return
+	}
+	engine.SetLogger(xorm.NewSimpleLogger(f))
+}
+
+func main() {
+	f, err := os.Open("E:/phptest/appserver/exerciseData0/jiaocaiTree-1018KB.json")
+	if err != nil {
+		panic(err)
+	}
+	var m Message
+	json.NewDecoder(f).Decode(&m)
+
+	for _, v := range m.Data.Items {
+		if v.Level == 4 {
+			courseId := v.ParentCode[2:4]
+			versionId := v.ParentCode[4:]
+			//fmt.Println(courseId, versionId)
+			var ec ExercisesCourse
+			_, err := engine.Where("map_id=?", courseId).Get(&ec)
+			if err != nil {
+				continue
+			}
+			var bc BizTextbookPublishingContact
+			_, err = engine.Where("publishing_house_id=?", versionId).Get(&bc)
+			if err != nil {
+				continue
+			}
+
+			b := BizTextbook{CourseId: ec.Id, PublishingHouseId: bc.Id, Name: v.Name, PublishingHouse: bc.PublishingHouse, MapId: v.Code}
+
+			sql := "insert into biz_textbook(course_id,publishing_house_id,name,publishing_house,map_id) values (?, ?, ?, ?, ?)"
+			_, err = engine.Exec(sql, b.CourseId, b.PublishingHouseId, b.Name, b.PublishingHouse, b.MapId)
+
+			if err != nil {
+				continue
+			}
+			//os.Exit(100)
+		}
+	}
+}
+
+type BizTextbook struct {
+	CourseId          string `json:"id"`
+	PublishingHouseId string `json:"publishing_house_id"`
+	Name              string `json:"name"`
+	PublishingHouse   string `json:"publishing_house"`
+	MapId             string `json:"map_id"`
+}
+
+type ExercisesCourse struct {
+	Id string `json:"id"`
+}
+
+type BizTextbookPublishingContact struct {
+	Id              string `json:"id"`
+	PublishingHouse string `json:"publishing_house"`
+}

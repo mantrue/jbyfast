@@ -1,0 +1,138 @@
+package main
+
+import (
+	"encoding/csv"
+	"fmt"
+	"gin-blog/pkg/logging"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
+	"log"
+	"os"
+	"time"
+)
+
+var db *gorm.DB
+
+func init() {
+	var (
+		err                                               error
+		dbType, dbName, user, password, host, tablePrefix string
+	)
+
+	if err != nil {
+		log.Fatal(2, "Fail to get section 'database': %v", err)
+	}
+
+	dbType = "xxx"
+	dbName = "xxx"
+	user = "root"
+	password = "xxx"
+	host = "xxx"
+	tablePrefix = ""
+
+	db, err = gorm.Open(dbType, fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
+		user,
+		password,
+		host,
+		dbName))
+
+	if err != nil {
+		logging.Info("=======数据库连接失败=======")
+		log.Println(err)
+	}
+
+	gorm.DefaultTableNameHandler = func(db *gorm.DB, defaultTableName string) string {
+		return tablePrefix + defaultTableName
+	}
+
+	db.LogMode(true)
+	db.SingularTable(true)
+
+	db.DB().SetMaxIdleConns(10)
+	db.DB().SetMaxOpenConns(100)
+}
+
+var num int
+
+func main() {
+
+	go func() {
+		timer := time.NewTicker(time.Second * 1)
+		for {
+			<-timer.C
+			num++
+			fmt.Printf("=====当前执行时间:%d秒=====请等待程序执行完毕\n", num)
+		}
+	}()
+	//获取分组的习题数量
+	var gexlist []Gettic
+	db.
+		Table("exercises_textbook_tree_info_createexercise").
+		Group("version_id,course_id,textbook_tree_info_id").
+		Order("version_id,course_id,textbook_tree_info_id").
+		Select("version_id,course_id,textbook_tree_info_id,count(exercises_createexercise_id) as vcount").
+		Scan(&gexlist)
+
+	var vl []BizTextbookPublishingContact
+	db.Find(&vl)
+	vlMapList := map[int]string{}
+	for _, obj := range vl {
+		vlMapList[obj.Id] = obj.PublishingHouse
+	}
+
+	//获取学科
+	var ec []ExercisesCourse
+	db.Find(&ec)
+	ecMapList := map[int]string{}
+	for _, obj := range ec {
+		ecMapList[obj.Id] = obj.Name
+	}
+
+	//获取年級
+	var abt []BizTextbook
+	db.Find(&abt)
+	abtMapList := map[int]string{}
+
+	for _, obj := range abt {
+		abtMapList[obj.Id] = obj.Name
+	}
+
+	var csvInfo = [][]string{}
+	for _, obj := range gexlist {
+		info := []string{vlMapList[obj.VersionId], ecMapList[obj.CourseId], abtMapList[obj.TextbookTreeInfoId], fmt.Sprintf("%d", obj.Vcount)}
+		csvInfo = append(csvInfo, info)
+	}
+
+	f, err := os.Create("nianji_xueke_version.csv") //创建文件
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+	f.WriteString("\xEF\xBB\xBF") // 写入UTF-8 BOM
+	w := csv.NewWriter(f)
+	w.WriteAll(csvInfo)
+	w.Flush()
+}
+
+//分组的数量
+type Gettic struct {
+	Vcount             int `json:"vcount"`
+	VersionId          int `json:"version_id"`
+	CourseId           int `json:"course_id"`
+	TextbookTreeInfoId int `json:"textbook_tree_info_id"`
+}
+
+type BizTextbookPublishingContact struct {
+	Id              int    `json:"id"`
+	PublishingHouse string `json:"publishing_house"`
+}
+
+type BizTextbook struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}
+
+type ExercisesCourse struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}

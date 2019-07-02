@@ -1,0 +1,117 @@
+package main
+
+import (
+	"encoding/csv"
+	"fmt"
+	"gin-blog/pkg/logging"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
+	"log"
+	"os"
+)
+
+var db *gorm.DB
+
+func init() {
+	var (
+		err                                               error
+		dbType, dbName, user, password, host, tablePrefix string
+	)
+
+	if err != nil {
+		log.Fatal(2, "Fail to get section 'database': %v", err)
+	}
+
+	dbType = "xx"
+	dbName = "xx"
+	user = "xxx"
+	password = "xx"
+	host = "rm-xx.mysql.rds.aliyuncs.com"
+	tablePrefix = ""
+
+	db, err = gorm.Open(dbType, fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
+		user,
+		password,
+		host,
+		dbName))
+
+	if err != nil {
+		logging.Info("=======数据库连接失败=======")
+		log.Println(err)
+	}
+
+	gorm.DefaultTableNameHandler = func(db *gorm.DB, defaultTableName string) string {
+		return tablePrefix + defaultTableName
+	}
+
+	db.LogMode(true)
+	db.SingularTable(true)
+
+	db.DB().SetMaxIdleConns(10)
+	db.DB().SetMaxOpenConns(100)
+}
+
+var num int
+var csvInfo = [][]string{}
+var myLearning = map[int]string{1: "小学", 2: "初中", 3: "高中"}
+
+func main() {
+
+	//获取学科
+	var ec []ExercisesCourse
+	db.Find(&ec)
+	ecMapList := map[int]string{}
+	for _, obj := range ec {
+		ecMapList[obj.Id] = obj.Name
+	}
+
+	var tl []TreeList
+
+	db.
+		Table("exercises_textbook_tree_info_createexercise").
+		Joins("JOIN exercises_textbook_tree_curriculum_tree ON exercises_textbook_tree_curriculum_tree.textbook_tree_info_id = exercises_textbook_tree_info_createexercise.id").
+		Joins("JOIN exercises_curriculum_tree_info ON exercises_curriculum_tree_info.id = exercises_textbook_tree_curriculum_tree.curriculum_tree_info_id").
+		Group("exercises_curriculum_tree_info.id").
+		Select("count(exercises_textbook_tree_info_createexercise.exercises_createexercise_id) as excount,exercises_curriculum_tree_info.id,exercises_curriculum_tree_info.tree_point_name,exercises_curriculum_tree_info.curriculum_tree_breviary_id as bid").
+		Scan(&tl)
+	fmt.Println(tl)
+
+	for _, obj := range tl {
+		var ectb ExercisesCurriculumTreeBreviary
+		db.
+			Table("exercises_curriculum_tree_breviary").
+			Where("id=?", obj.Bid).
+			Select("id,Learning_period_id as lid,course_id").
+			Scan(&ectb)
+		info := []string{myLearning[ectb.Lid], ecMapList[ectb.CourseId], obj.TreePointName, fmt.Sprintf("%d", obj.Excount)}
+		csvInfo = append(csvInfo, info)
+	}
+
+	f, err := os.Create("currtree.csv") //创建文件
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+	f.WriteString("\xEF\xBB\xBF") // 写入UTF-8 BOM
+	w := csv.NewWriter(f)
+	w.WriteAll(csvInfo)
+	w.Flush()
+}
+
+type ExercisesCurriculumTreeBreviary struct {
+	Id       int `json:"id"`
+	Lid      int `json:"Learning_period_id"`
+	CourseId int `json:"course_id"`
+}
+
+type TreeList struct {
+	Excount       int    `json:"excount"`
+	Id            int    `json:"id"`
+	Bid           int    `json:"bid"`
+	TreePointName string `json:"tree_point_name"`
+}
+
+type ExercisesCourse struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}

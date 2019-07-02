@@ -1,0 +1,64 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jinzhu/gorm"
+	"net/http"
+)
+
+var (
+	db  *gorm.DB
+	err error
+)
+
+func init() {
+	db, err = gorm.Open("mysql", "root:xxx@tcp(115.28.78.221:3306)/jingtongcloud?charset=utf8&parseTime=True&loc=Local")
+	db.LogMode(true)
+	db.SingularTable(true)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(db)
+}
+
+func Show(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(r.URL.Path)
+
+	b := make([]BbsReply, 0)
+	db.Select([]string{"id", "body", "creater"}).Find(&b)
+	json, err := json.Marshal(&b)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	w.Write(json)
+}
+
+func main() {
+	http.HandleFunc("/s", Show)
+	http.ListenAndServe(":8060", nil)
+
+	//下面的示例
+	//b1 := make([]BbsReply, 0)
+	//db.Find(&b1)
+	//fmt.Println(b1)
+	//
+	//var b2 []BbsReply
+	//db.Table("bbs_reply").Select([]string{"id", "body", "creater"}).Scan(&b2)
+	//fmt.Println(b2)
+	//
+	//rows, _ := db.Table("bbs_reply").Select([]string{"id", "body", "creater"}).Rows()
+	//for rows.Next() {
+	//	var b BbsReply
+	//	fmt.Println(rows.Scan(&b.Id, &b.Body, &b.Creater))
+	//	fmt.Println(b)
+	//}
+}
+
+type BbsReply struct {
+	Id      int    `json:"id"`
+	Body    string `json:"body"`
+	Creater string `json:"creater"`
+}

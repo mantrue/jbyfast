@@ -1,0 +1,71 @@
+package main
+
+import (
+	"fmt"
+	"os"
+	"path/filepath"
+	"strings"
+)
+
+func main() {
+
+	var DirName string
+	fmt.Println("请输入要处理的目录地址 示例:C:/Users/hack/Desktop/chanyanDir")
+	fmt.Scan(&DirName)
+
+	isarray := []string{"' '", "（", "）", "？", "、", "“", "☆", "*", "”", "·", " "}
+
+	paths := make([]string, 0)
+	filepath.Walk(DirName, func(path string, info os.FileInfo, err error) error {
+
+		if info.IsDir() {
+			_, f := filepath.Split(path)
+			_, i := in_array(f, isarray)
+			if i != -1 {
+				fmt.Println(path)
+				paths = append(paths, path)
+			}
+		}
+
+		return nil
+	})
+
+	for i := len(paths) - 1; i >= 0; i-- {
+		dir, f := filepath.Split(paths[i])
+		oldpath := f
+
+		newpath := strings.Replace(f, "' '", "", -1)
+		newpath = strings.Replace(newpath, "（", "", -1)
+		newpath = strings.Replace(newpath, "）", "", -1)
+		newpath = strings.Replace(newpath, "？", "", -1)
+		newpath = strings.Replace(newpath, "、", "", -1)
+		newpath = strings.Replace(newpath, "：", "", -1)
+		newpath = strings.Replace(newpath, "“", "", -1)
+		newpath = strings.Replace(newpath, "☆", "", -1)
+		newpath = strings.Replace(newpath, "*", "", -1)
+		newpath = strings.Replace(newpath, "”", "", -1)
+		newpath = strings.Replace(newpath, "·", "", -1)
+		newpath = strings.Replace(newpath, " ", "", -1)
+
+		err := os.Rename(dir+oldpath, dir+newpath)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+}
+
+func in_array(val string, array []string) (exists bool, index int) {
+	exists = false
+	index = -1
+
+	for i, v := range array {
+		if strings.Index(val, v) != -1 {
+			index = i
+			exists = true
+			return
+		}
+	}
+
+	return
+}

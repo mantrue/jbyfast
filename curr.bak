@@ -1,0 +1,109 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/go-xorm/core"
+	"github.com/go-xorm/xorm"
+	"os"
+)
+
+type Message struct {
+	Data Res
+}
+
+type Res struct {
+	Items []resitem
+}
+
+type resitem struct {
+	Sequence   int    `json:"sequence"`
+	Code       string `json:"code"`
+	ParentCode string `json:"parentCode"`
+	Level      int    `json:"level"`
+	Name       string `json:"name"`
+}
+
+var (
+	engine  *xorm.Engine
+	err     error
+	fileurl = ""
+)
+
+func init() {
+	var err error
+	engine, err = xorm.NewEngine("mysql", "root:xxx@tcp(118.190.65.33:3306)/jingtongcloud?charset=utf8")
+	if err != nil {
+		panic(err)
+	}
+
+	engine.ShowSQL(true)
+	engine.Logger().SetLevel(core.LOG_DEBUG)
+	f, err := os.OpenFile(fileurl, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+
+	if err != nil {
+		println(err.Error())
+		return
+	}
+	engine.SetLogger(xorm.NewSimpleLogger(f))
+}
+
+func main() {
+	f, err := os.Open("C:/Users/hack/Desktop/knowledgeTree.txt")
+	if err != nil {
+		panic(err)
+	}
+	var m Message
+	json.NewDecoder(f).Decode(&m)
+	var num int64
+
+	for _, v := range m.Data.Items {
+
+		if v.ParentCode == "03" {
+			courseId := v.Code[2:4]
+			var dccr DictCourseCopyResource
+			_, err := engine.Where("map_id=?", courseId).Join("LEFT", "exercises_curriculum_tree_breviary", "exercises_curriculum_tree_breviary.course_id = dict_course_copy_resource.id").Get(&dccr)
+			if err != nil {
+				continue
+			}
+
+			if dccr.Id != "" {
+				fmt.Println("===============================")
+				ectb := ExercisesCurriculumTreeBreviary{LearningPeriodId: 3, CourseId: dccr.Id, CreatStatus: 1, MapId: v.Code}
+
+				sql := "insert into exercises_curriculum_tree_breviary(Learning_period_id,course_id,creat_status,map_id_copy) values (?, ?, ?, ?)"
+				_, err = engine.Exec(sql, ectb.LearningPeriodId, ectb.CourseId, ectb.CreatStatus, ectb.MapId)
+
+				if err != nil {
+					continue
+				}
+				num++
+				fmt.Printf("当前执行到%d条", num)
+			}
+
+		}
+	}
+}
+
+type ExercisesCurriculumTreeInfo struct {
+	CurriculumTreeBreviaryId string `json:"curriculum_tree_breviary_id"`
+	TreePointName            string `json:"tree_point_name"`
+	ParentId                 string `json:"parent_id"`
+	Level                    int64  `json:"level"`
+	Html                     string `json:"html"`
+	MapId                    string `json:"map_id"`
+	Id                       string `json:"id"`
+}
+
+type ExercisesCurriculumTreeBreviary struct {
+	LearningPeriodId int64  `json:"Learning_period_id"`
+	CourseId         string `json:"course_id"`
+	CreatStatus      int64  `json:"creat_status"`
+	MapId            string `json:"map_id"`
+}
+
+type DictCourseCopyResource struct {
+	Id    string `json:"id"`
+	MapId string `json:"map_id"`
+}

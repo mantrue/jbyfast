@@ -1,0 +1,100 @@
+package main
+
+import (
+	"encoding/csv"
+	"fmt"
+	"os"
+	ph "path"
+	"path/filepath"
+	"strings"
+)
+
+//扩展列表
+var cutList = []string{"pdf", "docx", "doc", "pptx", "ppt", "rar", "zip"}
+
+func main() {
+	maplist := map[string][]string{}
+	mapcount := map[string]int{}
+
+	filepath.Walk("E:/goroot/zhongguo", func(path string, info os.FileInfo, err error) error {
+		d, _ := filepath.Split(path)
+
+		if info.IsDir() != true {
+			saveName := ph.Ext(info.Name())
+
+			maplist[d] = append(maplist[d], strings.TrimLeft(saveName, "."))
+			mapcount[d]++
+
+		}
+		return nil
+	})
+
+	data := map[string]map[string]int{}
+
+	var Max int
+
+	for k, v := range maplist {
+		m := getSliceStrCount(v)
+		data[k] = m
+		n := strings.Count(k, "\\")
+		if n > Max {
+			Max = n
+		}
+	}
+
+	savedata := [][]string{}
+
+	for dir, v := range data {
+		sf := strings.Split(dir, "\\")
+
+		n := len(sf)
+		n = n - 1
+
+		if n < Max {
+			sli := make([]string, Max-n)
+
+			for i := range sli {
+				sli[i] = " "
+			}
+			sf = append(sf, sli...)
+			sf = append(sf, "sum", fmt.Sprintf("%d", mapcount[dir]))
+		} else {
+			sf = append(sf, "sum", fmt.Sprintf("%d", mapcount[dir]))
+		}
+
+		if n > 0 {
+			for _, cv := range cutList {
+				sf = append(sf, cv, fmt.Sprintf("%d", v[cv]))
+			}
+			//for kf, num := range v {
+			//	fmt.Println(kf, num)
+			//	sf = append(sf, kf, fmt.Sprintf("%d", num))
+			//}
+		}
+		savedata = append(savedata, sf)
+	}
+
+	f, err := os.Create("test.csv") //创建文件
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+
+	f.WriteString("\xEF\xBB\xBF") // 写入UTF-8 BOM
+
+	w := csv.NewWriter(f)
+
+	w.WriteAll(savedata)
+	w.Flush()
+
+	fmt.Println("============程序执行完毕============")
+
+}
+
+func getSliceStrCount(arr []string) map[string]int {
+	mapl := map[string]int{}
+	for _, v := range arr {
+		mapl[v]++
+	}
+	return mapl
+}

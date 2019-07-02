@@ -1,0 +1,50 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type Message struct {
+	Data ToTalData
+}
+
+type ToTalData struct {
+	Total     int `json:"total"`
+	Questions []Qs
+}
+
+type Qs struct {
+	ExposureTime     string `json:"exposureTime"`
+	CourseCode       string `json:"courseCode"`
+	DifficultyDegree string `json:"difficultyDegree"`
+	Type             string `json:"type"`
+	CreateTime       string `json:"createTime"`
+	Score            int    `json:"score"`
+	RealName         string `json:"realName"`
+	Stem             string `json:"stem"`
+	Status           string `json:"status"`
+}
+
+func main() {
+	str := `{
+	"data": {
+		"total": 114,
+		"questions": [{
+			"score": null,
+			"realName": null,
+			"answer": {
+				"content": "<p><img src=\"https://otsstatic.chinaedu.com/ots/101/quesimages/69/77/JDT150508006977/image29.png\" alt=\"image29.png\" width=\"444\" height=\"293\" /></p><p><span>（1）20；（2）2005；（3）2007（4）2007；2004（5）略</span></p>"
+			},
+			"stem": "<p><span>某电脑公司第一、第二门市部2004年——2007年上缴利润情况如下表：</span></p><p><img src=\"https://otsstatic.chinaedu.com/ots/101/quesimages/69/77/JDT150508006977/image27.png\" alt=\"image27.png\" width=\"333\" height=\"94\" /></p><p><span>根据表中数据，完成下面的条形统计图。</span></p><p><img src=\"https://otsstatic.chinaedu.com/ots/101/quesimages/69/77/JDT150508006977/image28.png\" alt=\"image28.png\" width=\"378\" height=\"300\" /></p><p><span>根据上面统计图填空。</span></p><p><span>（1）纵轴上每个单位长度表示（    ）万元。</span></p><p><span>（2）（    ）年第一、第二门市部所缴利润相差最少。</span></p><p><span>（3）（    ）年第一、第二门市部所缴利润相差最多。</span></p><p><span>（4）第一门市部（    ）年所缴利润最多，（    ）年所缴利润最少。</span></p><p><span>（5）从图中，你还能知道哪些信息？</span></p>",
+			"status": "已入库"
+		}]
+	}
+}`
+	var m Message
+	err := json.Unmarshal([]byte(str), &m)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%v\n", m)
+}

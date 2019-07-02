@@ -1,0 +1,58 @@
+package main
+
+import (
+	"encoding/csv"
+	"fmt"
+	"github.com/PuerkitoBio/goquery"
+	"log"
+	"net/http"
+	"os"
+	"strconv"
+)
+
+func main() {
+	var info [][]string
+	for i := 0; i < 22; i++ {
+		data := Grasp("https://www.66law.cn/zhengzhou/lawyer/page_" + strconv.Itoa(i) + ".aspx")
+		info = append(info, data...)
+	}
+
+	f, err := os.Create("Grasp.csv") //创建文件
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+
+	f.WriteString("\xEF\xBB\xBF") // 写入UTF-8 BOM
+
+	w := csv.NewWriter(f)
+
+	w.WriteAll(info)
+	w.Flush()
+
+	fmt.Println("============程序执行完毕============")
+	fmt.Println(info)
+}
+
+func Grasp(url string) [][]string {
+	html, err := http.Get(url)
+
+	if err != nil {
+		panic(err)
+	}
+
+	dom, err := goquery.NewDocumentFromReader(html.Body)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	info := [][]string{}
+	dom.Find(".find-list5 li").Each(func(i int, selection *goquery.Selection) {
+		userName := selection.Find("p .mr15").Text()
+		phone := selection.Find("p .showphone").Text()
+		address := selection.Find("p:last-of-type").Text()
+		info = append(info, []string{userName, phone, address})
+	})
+
+	return info
+}
