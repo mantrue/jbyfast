@@ -2,36 +2,31 @@ package main
 
 import (
 	"fmt"
-	"sync"
-	"time"
+	"log"
+	"net/http"
+
+	"github.com/julienschmidt/httprouter"
 )
 
+func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	fmt.Fprint(w, "Welcome!\n")
+}
+
+func Hello(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	fmt.Fprintf(w, "hello, %s!\n", ps.ByName("name"))
+}
+
 func main() {
-	ch := make(chan string)
-	var sendMap = make(map[string]string)
-	var sy sync.Mutex
+	router := httprouter.New()
+	router.GET("/", Auth(Index))
+	router.GET("/hello/:name", Hello)
 
-	go func() {
-		time.Sleep(time.Second * 2)
-		sy.Lock()
-		sendMap["order"] = "list"
-		sy.Unlock()
-		ch <- "订单查询完毕"
-	}()
+	log.Fatal(http.ListenAndServe(":8080", router))
+}
 
-	go func() {
-		time.Sleep(time.Second * 1)
-		sy.Lock()
-		sendMap["comment"] = "list"
-		sy.Unlock()
-		ch <- "评论查询完毕"
-	}()
-
-	for i := 0; i < 2; i++ {
-		<-ch
+func Auth(h httprouter.Handle) httprouter.Handle {
+	return func(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+		fmt.Println("auth")
+		h(w, r, ps)
 	}
-
-	time.Sleep(time.Second * 1) //主流程更快的查询速度
-	sendMap["Master"] = "info"
-	fmt.Println(sendMap) //合并所有结果并打印
 }

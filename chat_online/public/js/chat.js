@@ -9,6 +9,7 @@ var Chat = {
 	 * ws url
 	 */
 	wsUrl : 'ws://' + window.location.host + '/ws',
+    //wsUrl : 'ws://118.190.65.33:8087/ws',
 
 	/**
 	 * user_id
@@ -37,9 +38,14 @@ var Chat = {
 
 		$("input[name='room_id']").attr("disabled",true);
 		$("input[name='user_id']").attr("disabled",true);
-		this.socket = new WebSocket(this.wsUrl + "?room_id=100"+"&user_id=" + userId);
+		this.socket = new WebSocket(this.wsUrl + "?room_id=1000"+"&user_id=" + userId);
+
 		this.bindSocket();
+
+
 	},
+
+
 
 	bindSocket: function () {
 		//socket 连接
@@ -47,9 +53,10 @@ var Chat = {
 		if(socket == null) {
 			this.init();
 		}
-		//连接成功
+
 		socket.onopen = function (event) {
-			onOpen(event);
+			//onOpen(event);
+            setInterval(Ping, 1000);
 		};
 		//连接关闭
 		socket.onclose = function (event) {
@@ -63,6 +70,10 @@ var Chat = {
 		socket.onerror = function (event) {
 			onError(event);
 		};
+
+        function Ping() {
+        	console.log("log....")
+        }
 
 		function onOpen(event) {
 			writeToScreen("websocket connect success!");
@@ -103,7 +114,7 @@ var Chat = {
 		var id = $("input[name='user_id']").val();
         var room_id = $("input[name='room_id']").val();
 		var message = $("textarea[name='message']").val();
-		var data = '{"room_id": "100","user_id": "'+ id +'", "type": 1, "message":"'+ message +'"}';
+		var data = '{"room_id": "1000","user_id": "'+ id +'", "type": 1, "message":"'+ message +'","sec":1}';
 		// alert(data);
 		console.log(data);
 		socket.send(data);

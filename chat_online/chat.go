@@ -1,10 +1,15 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/gorilla/websocket"
+	"log"
+	"net/http"
 	"os"
+	"strings"
 	"sync"
+	"time"
 )
 
 // Group struct
@@ -15,18 +20,25 @@ type Group struct {
 
 // User struct
 type User struct {
-	Id      string          `json:"id"`
-	GroupId string          `json:"group_id"`
-	Name    string          `json:"name"`
-	Ws      *websocket.Conn `json:"ws"`
+	Id       string          `json:"id"`
+	GroupId  string          `json:"group_id"`
+	Name     string          `json:"name"`
+	Ws       *websocket.Conn `json:"ws"`
+	OnlineAt time.Time       `json:"online_at"` //上线时间
+	Dt       time.Duration   `json:"dt"`        //在线时长
 }
 
 // Messages struct
 type Messages struct {
-	Type    int    `json:"type"`
-	Message string `json:"message"`
-	UserId  string `json:"user_id"`
-	RoomId  string `json:"room_id"`
+	Id       string  `json:"id"`        //全局唯一id
+	Type     int     `json:"type"`      //数据格式类型
+	Message  string  `json:"message"`   //消息实体
+	UserId   string  `json:"user_id"`   //用户id
+	RoomId   string  `json:"room_id"`   //房间号
+	CreateAt string  `json:"create_at"` //创建时间
+	Unread   uint8   `json:"unread"`    //1未读消息 2已读消息
+	Sec      float64 `json:"sec"`       //录音的秒数
+	Nickname string  `json:"nickname"`  //昵称
 }
 
 // Chat struct
@@ -111,20 +123,18 @@ func (chat *Chat) AddUser(id string, groupId string, name string, ws *websocket.
 	}
 
 	//check user id name is exists
-	for _, chatUser := range chat.users {
+	for index, chatUser := range chat.users {
 		if chatUser.Id == id {
-			printError("add user error: id already exists!")
-		}
-		if chatUser.Name == name {
-			printError("add user error: name already exists!")
+			chat.users = append(chat.users[:index], chat.users[index+1:]...)
 		}
 	}
 
 	user := &User{
-		Id:      id,
-		GroupId: groupId,
-		Name:    name,
-		Ws:      ws,
+		Id:       id,
+		GroupId:  groupId,
+		Name:     name,
+		Ws:       ws,
+		OnlineAt: time.Now(),
 	}
 
 	chat.users = append(chat.users, user)
@@ -140,12 +150,38 @@ func (chat *Chat) DeleteUser(id string) {
 		if chatUser.Id == id {
 			//close ws
 			chatUser.Ws.Close()
+			chatUser.Dt = time.Since(chatUser.OnlineAt) / 1e9
+
+			//进行数据跟踪
+			go httpPostForm(chatUser)
+
 			continue
 		}
 		users = append(users, chatUser)
 	}
 
 	chat.users = users
+}
+
+func httpPostForm(chatUser *User) {
+
+	defer func() {
+		if err := recover(); err != nil {
+			log.Println("http跟踪异常 保存日志服务器出现问题")
+			return
+		}
+	}()
+
+	jsondata, _ := json.Marshal(chatUser)
+
+	request, _ := http.NewRequest("POST", "http://shop.jtypt.com/index.php?s=/wechat/index/chatlog", strings.NewReader(string(jsondata)))
+	//post数据并接收http响应
+	request.Header.Set("Content-Type", "application/json;charset=UTF-8")
+	resp, err := http.DefaultClient.Do(request)
+	if err != nil {
+		log.Println("http post 数据跟踪异常 日志保存失败", err.Error())
+	}
+	defer resp.Body.Close()
 }
 
 // get user list

@@ -50,6 +50,12 @@ var Chat = {
 		//连接成功
 		socket.onopen = function (event) {
 			onOpen(event);
+            setInterval(
+                function(){
+                	socket.send("ping");
+                	console.log("log....")
+				}
+                , 1000 )
 		};
 		//连接关闭
 		socket.onclose = function (event) {

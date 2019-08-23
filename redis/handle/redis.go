@@ -32,6 +32,25 @@ func init() {
 	}
 }
 
+//options := redis.DialPassword("Jingbanyun426!426")
+//c, err := redis.Dial("tcp", "115.28.78.221:6379", options)
+//if err != nil {
+//fmt.Println("conn redis failed,", err)
+//return
+//}
+//defer c.Close()
+//
+//_, err = c.Do("zadd", "runoobkey", time.Now().UnixNano()/1e6, "gege1")
+//if err != nil {
+//fmt.Println(err)
+//return
+//}
+//values, err := redis.Values(c.Do("lrange", "room:id:10010", 20, 29))
+//if err != nil {
+//fmt.Println("get abc failed,", err)
+//return
+//}
+
 func (t *Redis) GetK(ctx context.Context, args *Args, reply *Reply) error {
 	c := pool.Get()
 	defer c.Close()
