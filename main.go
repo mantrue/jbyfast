@@ -2,31 +2,40 @@ package main
 
 import (
 	"fmt"
+	"github.com/garyburd/redigo/redis"
 	"log"
-	"net/http"
-
-	"github.com/julienschmidt/httprouter"
+	"sync"
 )
 
-func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	fmt.Fprint(w, "Welcome!\n")
-}
-
-func Hello(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	fmt.Fprintf(w, "hello, %s!\n", ps.ByName("name"))
-}
-
 func main() {
-	router := httprouter.New()
-	router.GET("/", Auth(Index))
-	router.GET("/hello/:name", Hello)
+	server := "115.28.78.221:6379"
 
-	log.Fatal(http.ListenAndServe(":8080", router))
-}
-
-func Auth(h httprouter.Handle) httprouter.Handle {
-	return func(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-		fmt.Println("auth")
-		h(w, r, ps)
+	option := redis.DialPassword("Jingbanyun426!426")
+	c, err := redis.Dial("tcp", server, option)
+	if err != nil {
+		log.Println("connect server failed:", err)
+		return
 	}
+
+	defer c.Close()
+	var wg sync.WaitGroup
+	wg.Add(100)
+
+	for i := 0; i < 100; i++ {
+		go func() {
+
+			v, err := redis.Int64(c.Do("INCR", "mykey"))
+			if err != nil {
+				log.Println("INCR failed:", err)
+				return
+			}
+			log.Println("value:", v)
+			wg.Done()
+
+		}()
+	}
+
+	wg.Wait()
+	fmt.Println("end")
+
 }

@@ -1,0 +1,204 @@
+package main
+
+import (
+	"fmt"
+	"github.com/rs/xid"
+	"io"
+	"io/ioutil"
+	"log"
+	"net"
+	"net/http"
+	"os"
+	"strconv"
+	"strings"
+	"time"
+)
+
+func revFile(fileName string, conn net.Conn) {
+	defer conn.Close()
+
+	var isAI bool
+
+	if strings.Contains(fileName, "_") == false {
+		return
+	}
+
+	if strings.Contains(fileName, "AI") != false {
+		isAI = true
+	}
+
+	split_dir := strings.Split(fileName, "_")
+	file_size, _ := strconv.Atoi(split_dir[0])
+
+	if strings.Contains(split_dir[1], "_") == false {
+		return
+	}
+
+	penIdInfo := strings.Split(split_dir[1], "-")
+
+	if len(penIdInfo) < 0 {
+		return
+	}
+
+	pendId := penIdInfo[0]
+	userId := penIdInfo[1]
+	userId = strings.Replace(userId, ".wav", "", -1)
+
+	if file_size <= 0 {
+		return
+	}
+
+	dirName := "./public/chat/" + time.Now().Format("2006-01-02") + "/"
+	istrue, err := PathExists(dirName)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	if istrue == false { //递归创建文件目录
+		err := os.MkdirAll(dirName, os.ModePerm)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+	}
+
+	fileName = dirName + fmt.Sprintf("%d", time.Now().Unix()) + xid.New().String() + ".wav"
+
+	fs, err := os.Create(fileName)
+	defer fs.Close()
+	fmt.Println("服务器创建文件名为：", fileName)
+
+	if err != nil {
+		fmt.Println("os.Create err =", err)
+		return
+	}
+
+	// 拿到数据
+	buf := make([]byte, 1024)
+	var num int
+	for {
+		n, err := conn.Read(buf)
+		if err != nil {
+			fmt.Println("conn.Read err =", err)
+			if err == io.EOF {
+				fmt.Println("文件结束了", err)
+			}
+			break
+		}
+		if n == 0 {
+			fmt.Println("文件结束了", err)
+			break
+		}
+		fs.Write(buf[:n])
+		num += n
+
+		if num == file_size {
+			fs.Write(buf[:n])
+			break
+		}
+		fmt.Println("当前循环大小", num, file_size)
+	}
+	fmt.Println("跳出读取区间")
+	//把上传成功的地址给写进去
+	if isAI == true { //AI推送处理
+		res := httpPostAI(fileName, pendId)
+		conn.Write(res) //把智能语音结果写到socket中
+	} else {
+		conn.Write([]byte(fileName))
+		httpPost(fileName, pendId, userId)
+	}
+	return
+}
+
+//判断文件是否存在
+func PathExists(path string) (bool, error) {
+	_, err := os.Stat(path)
+	if err == nil {
+		return true, nil
+	}
+	if os.IsNotExist(err) {
+		return false, nil
+	}
+	return false, err
+}
+
+func httpPostAI(fileName string, pendId string) []byte {
+	fmt.Println("====AI推送====")
+	parems := "wavFileName=" + fileName + "&penId=" + pendId
+
+	request, _ := http.NewRequest("POST", "http://shop.jtypt.com/index.php?s=/wechat/Device/getQaUrl", strings.NewReader(parems))
+	request.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	resp, err := http.DefaultClient.Do(request)
+	if err != nil {
+		log.Println("AI推送", err.Error())
+	}
+	defer resp.Body.Close()
+	by, err := ioutil.ReadAll(resp.Body)
+
+	if err != nil {
+		log.Println("AI推送失败", err.Error())
+	}
+	return by
+}
+
+func httpPost(fileName string, pendId string, userId string) {
+	fmt.Println("====websocket推送====")
+	parems := "url=" + fileName + "&pendid=" + pendId + "&userid=" + userId
+
+	request, _ := http.NewRequest("POST", "http://shop.jtypt.com/index.php?s=/api/Asyncwebsocket/send", strings.NewReader(parems))
+	request.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	resp, err := http.DefaultClient.Do(request)
+	if err != nil {
+		log.Println("websocket推送", err.Error())
+	}
+	defer resp.Body.Close()
+}
+
+func handleTcp(conn net.Conn) {
+	defer conn.Close()
+
+	conn.SetReadDeadline(time.Now().Add(time.Second * 3))
+
+	buf := make([]byte, 1024)
+	n, err1 := conn.Read(buf)
+	if err1 != nil {
+		fmt.Println("conn.Read err =", err1)
+		return
+	}
+	// 拿到了文件的名字
+	fileName := string(buf[:n])
+
+	if strings.Contains(fileName, "_") == false {
+		return
+	}
+
+	fmt.Println(fileName)
+	// 返回ok
+	conn.Write([]byte("success"))
+	// 接收文件,
+	revFile(fileName, conn)
+}
+
+func main() {
+	// 创建一个服务器
+	Server, err := net.Listen("tcp", "118.190.65.33:8002")
+	if err != nil {
+		fmt.Println("net.Listen err =", err)
+		return
+	}
+	fmt.Println("server start listent 127.0.0.1:8002")
+
+	defer Server.Close()
+	// 接受文件名
+	for {
+		conn, err := Server.Accept()
+		fmt.Println("========有链接进来了========")
+
+		if err != nil {
+			fmt.Println("Server.Accept err =", err)
+			return
+		}
+		go handleTcp(conn)
+	}
+}

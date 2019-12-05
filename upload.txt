@@ -2,13 +2,26 @@ package main
 
 import (
 	"fmt"
+	"github.com/rs/xid"
 	"io"
+	"log"
 	"net"
 	"os"
+	"os/exec"
+	"path/filepath"
+	"strconv"
+	"strings"
+	"time"
 )
 
 func revFile(fileName string, conn net.Conn) {
 	defer conn.Close()
+
+	split_dir := strings.Split(fileName, "_")
+	file_size, _ := strconv.Atoi(split_dir[0])
+
+	fileName = "./public/chat/" + time.Now().Format("2006-01-02") + "/" + fmt.Sprintf("%d", time.Now().Unix()) + xid.New().String() + ".wav"
+
 	fs, err := os.Create(fileName)
 	defer fs.Close()
 	fmt.Println("服务器创建文件名为：", fileName)
@@ -35,14 +48,59 @@ func revFile(fileName string, conn net.Conn) {
 			break
 		}
 		fs.Write(buf[:n])
-		num++
+		num += n
+		if num == file_size {
+			fs.Write(buf[:n])
+			break
+		}
 	}
-	fmt.Println("读取次数为", num)
+	//把上传成功的地址给写进去
+	conn.Write([]byte(fileName))
+
 	return
 }
+
+//执行语音转化
+func CmdRun(wav_file string) string {
+	if len(wav_file) <= 0 {
+		log.Fatal("wav_file error. ")
+		return ""
+	}
+	mp3_file := strings.Replace(wav_file, "wav", "mp3", -1)
+	mp3_dir, _ := filepath.Split(mp3_file)
+	new_mp3 := mp3_dir + xid.New().String() + ".mp3"
+
+	cmd := exec.Command("/usr/bin/ffmpeg", "-i", wav_file, new_mp3)
+	err := cmd.Run()
+	if err != nil {
+		fmt.Println("file errror", err)
+	}
+
+	os.Remove(wav_file)
+	fmt.Println("new url:", new_mp3)
+	return new_mp3
+}
+
+func handleTcp(conn net.Conn) {
+	buf := make([]byte, 1024)
+	n, err1 := conn.Read(buf)
+	if err1 != nil {
+		fmt.Println("conn.Read err =", err1)
+		return
+	}
+	// 拿到了文件的名字
+	fileName := string(buf[:n])
+
+	fmt.Println(fileName)
+	// 返回ok
+	conn.Write([]byte("success"))
+	// 接收文件,
+	revFile(fileName, conn)
+}
+
 func main() {
 	// 创建一个服务器
-	Server, err := net.Listen("tcp", "127.0.0.1:8001")
+	Server, err := net.Listen("tcp", "118.190.65.33:8002")
 	if err != nil {
 		fmt.Println("net.Listen err =", err)
 		return
@@ -59,20 +117,6 @@ func main() {
 			fmt.Println("Server.Accept err =", err)
 			return
 		}
-		buf := make([]byte, 1024)
-		n, err1 := conn.Read(buf)
-		if err1 != nil {
-			fmt.Println("conn.Read err =", err1)
-			return
-		}
-		// 拿到了文件的名字
-		fileName := string(buf[:n])
-
-		fmt.Println(fileName)
-		// 返回ok
-		conn.Write([]byte("success"))
-		// 接收文件,
-		revFile(fileName, conn)
-
+		go handleTcp(conn)
 	}
 }

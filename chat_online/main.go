@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/eclipse/paho.mqtt.golang"
 	"github.com/garyburd/redigo/redis"
 	"github.com/gorilla/websocket"
 	"github.com/rs/xid"
@@ -55,6 +56,14 @@ func main() {
 
 	// 开启协程读取ws信息
 	go handleMessages()
+	go handleMessages()
+	go handleMessages()
+	go handleMessages()
+	go handleMessages()
+	go handleMessages()
+
+	//开启mqtt
+	go consume()
 
 	//开启心跳
 	go pingClient()
@@ -141,6 +150,9 @@ func handleConnections(w http.ResponseWriter, req *http.Request) {
 	// 添加用户
 	chat.AddUser(userId, roomId, "user_"+userId, ws)
 
+	//如果连接5秒钟没有任何操作就触发断开连接
+	//ws.SetReadDeadline(time.Now().Add(time.Second * 5))
+
 	for {
 		// 读取前台的信息
 		var msg Messages
@@ -199,7 +211,7 @@ func saveChatRedis(msg Messages) {
 
 	defer func() {
 		if err := recover(); err != nil {
-			log.Println("redis跟踪异常 数据无法保存")
+			log.Println("redis跟踪异常 数据无法保存", err)
 			return
 		}
 	}()
@@ -212,10 +224,59 @@ func saveChatRedis(msg Messages) {
 		return
 	}
 
-	_, err = c.Do("lpush", "push:chat:"+msg.RoomId, msgJ)
+	_, err = c.Do("rpush", "push:chat:"+msg.RoomId, msgJ)
 	if err != nil {
 		log.Println("redis保存推送失败" + err.Error())
 		return
 	}
+
+	//进行mqtt推送服务 以后删除（其他项目用的时候进行删除）
+
+	num, _ := c.Do("llen", "push:chat:"+msg.RoomId)
+	mynum, _ := num.(int64)
+
+	mqttinfo := make(map[string]interface{})
+	mqttinfo["type"] = 1
+	mqttinfo["data"] = msg.Message
+	mqttinfo["index"] = mynum - 1
+	mqttinfo["roomId"] = msg.RoomId
+	//开始mqtt推送
+	mqttch <- mqttinfo
+
 	return
+}
+
+//保存mqtt
+var mqttch = make(chan map[string]interface{}, 10)
+
+//消费mqtt
+func consume() {
+First:
+	opts := mqtt.NewClientOptions().AddBroker("tcp://118.190.65.33:1884").SetClientID("chat_123456")
+	opts.SetCleanSession(false)
+	opts.Username = "chisj"
+	opts.Password = "chisj"
+
+	clientMqtt := mqtt.NewClient(opts)
+	if token := clientMqtt.Connect(); token.Wait() && token.Error() != nil {
+		fmt.Println("mqtt初始化错误:", token.Error())
+		return
+	}
+	var num int
+	for {
+		msg := <-mqttch
+		fmt.Println("读取数据", msg)
+
+		msgJson, _ := json.Marshal(msg)
+		if token := clientMqtt.Publish(msg["roomId"].(string), 2, false, string(msgJson)); token.Wait() && token.Error() != nil {
+			fmt.Println("mqtt推送错误信息:", token.Error())
+			clientMqtt.Disconnect(100)
+			goto First
+		} else {
+			num++
+			fmt.Println("当前mqtt发送了", num)
+		}
+
+	}
+
 }

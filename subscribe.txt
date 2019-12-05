@@ -1,0 +1,31 @@
+package main
+
+import (
+	"fmt"
+	"github.com/eclipse/paho.mqtt.golang"
+)
+
+func main() {
+	opts := mqtt.NewClientOptions().AddBroker("tcp://118.190.65.33:1883").SetClientID("sample")
+	opts.SetCleanSession(false)
+
+	c := mqtt.NewClient(opts)
+	if token := c.Connect(); token.Wait() && token.Error() != nil {
+		panic(token.Error())
+	} else {
+		go subscribe(c) //监听一个订阅=====
+	}
+
+	fmt.Println("=====模拟发送mqtt======")
+	select {}
+}
+
+func subscribe(c mqtt.Client) {
+	//定义，接收到数据后的回调函数
+	var num int
+	c.Subscribe("test", 1, func(mqtt mqtt.Client, msg mqtt.Message) {
+		fmt.Printf("Success SubscribeUplink with msg:%s\n", msg.Payload())
+		num++
+		fmt.Println("执行次数", num)
+	})
+}

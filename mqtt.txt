@@ -1,0 +1,61 @@
+package main
+
+import (
+	"fmt"
+	"github.com/eclipse/paho.mqtt.golang"
+	"strconv"
+	"sync"
+	"time"
+)
+
+func main() {
+	opts := mqtt.NewClientOptions().AddBroker("tcp://118.190.65.33:1884").SetClientID("sample")
+	opts.SetCleanSession(false)
+	opts.Username = "chisj"
+	opts.Password = "chisj"
+
+	c := mqtt.NewClient(opts)
+
+	if token := c.Connect(); token.Wait() && token.Error() != nil {
+		panic(token.Error())
+	} else {
+		go subscribe(c) //监听一个订阅=====
+	}
+
+	if token := c.Publish("test", 2, false, "{name:'hello'}"); token.Wait() && token.Error() != nil {
+		fmt.Println(token.Error())
+	}
+	fmt.Println("=====模拟发送mqtt======")
+
+	//模拟一个延时的等待
+	time.Sleep(time.Second * 1)
+	var wg sync.WaitGroup
+	for i := 0; i < 100; i++ { //并发的模拟 消息是否丢失
+		wg.Add(1)
+		go func(i int) {
+			if token := c.Publish("test", 2, false, "{name:'mqtt推送模拟'}"+strconv.Itoa(i)); token.Wait() && token.Error() != nil {
+				fmt.Println(token.Error())
+			}
+			wg.Done()
+		}(i)
+	}
+
+	go func() {
+		fmt.Println("http post PHP push")
+	}()
+
+	wg.Wait() //等待任务结束
+	fmt.Println("====程序结束====")
+
+	select {}
+}
+
+func subscribe(c mqtt.Client) {
+	//定义，接收到数据后的回调函数
+	c.Subscribe("test", 2, func(mqtt mqtt.Client, msg mqtt.Message) {
+		fmt.Println(msg.MessageID())
+		fmt.Printf("Success SubscribeUplink with msg:%s\n", msg.Payload())
+		msg.Ack()
+		time.Sleep(time.Second * 5)
+	})
+}
